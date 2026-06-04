@@ -3,6 +3,8 @@
 
 # Regenerate with npm run assets (dist includes built CDN assets)
 rebuild/public/
+!rebuild/public/css/knight-upgrades.css
+!rebuild/public/js/knight-upgrades.js
 
 # Deploy staging output
 rebuild/pages-deploy/
