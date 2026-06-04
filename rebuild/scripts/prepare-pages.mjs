@@ -10,6 +10,7 @@ const ROOT = path.join(__dirname, '..');
 const DIST = path.join(ROOT, 'dist');
 const OUT = path.join(ROOT, 'pages-deploy');
 const BASE = process.env.PAGES_BASE || '/Clearwater-Dentist/';
+const BASE_PATH = BASE.replace(/\/$/, '');
 
 async function copyDir(src, dest) {
   await fs.mkdir(dest, { recursive: true });
@@ -43,6 +44,48 @@ async function injectBase(file) {
   if (changed) await fs.writeFile(file, html, 'utf8');
 }
 
+function prefixRootPaths(text) {
+  if (!BASE_PATH || BASE_PATH === '/') return text;
+  let out = text;
+
+  // HTML attributes: href="/...", src="/...", srcset="/..."
+  out = out.replace(
+    /\b(href|src|poster|action)=["']\/(?!\/|Clearwater-Dentist\/|https?:|#)([^"']*)["']/gi,
+    (_m, attr, value) => `${attr}="${BASE_PATH}/${value}"`
+  );
+
+  // srcset values can include multiple root-relative candidates.
+  out = out.replace(
+    /\b(srcset)=["']([^"']+)["']/gi,
+    (_m, attr, value) =>
+      `${attr}="${value.replace(/(^|,\s*)\/(?!\/|Clearwater-Dentist\/)([^,\s]+)/g, `$1${BASE_PATH}/$2`)}"`
+  );
+
+  // CSS url(/...) references inside style tags or stylesheet files.
+  out = out.replace(
+    /url\((['"]?)\/(?!\/|Clearwater-Dentist\/|data:|https?:)([^'")]+)\1\)/gi,
+    (_m, quote, value) => `url(${quote}${BASE_PATH}/${value}${quote})`
+  );
+
+  // Inline CSS/import strings occasionally use quoted root paths.
+  out = out.replace(
+    /(["'])\/(?!\/|Clearwater-Dentist\/|data:|https?:|#)(cdn|css|js|fonts|images|assets)\//gi,
+    (_m, quote, dir) => `${quote}${BASE_PATH}/${dir}/`
+  );
+
+  return out;
+}
+
+async function prefixFile(file) {
+  const before = await fs.readFile(file, 'utf8');
+  const after = prefixRootPaths(before);
+  if (after !== before) {
+    await fs.writeFile(file, after, 'utf8');
+    return 1;
+  }
+  return 0;
+}
+
 async function walkHtml(dir) {
   for (const e of await fs.readdir(dir, { withFileTypes: true })) {
     const p = path.join(dir, e.name);
@@ -51,8 +94,23 @@ async function walkHtml(dir) {
   }
 }
 
+async function walkDeployFiles(dir) {
+  let changed = 0;
+  for (const e of await fs.readdir(dir, { withFileTypes: true })) {
+    const p = path.join(dir, e.name);
+    if (e.isDirectory()) changed += await walkDeployFiles(p);
+    else if (['.html', '.css', '.js'].some((ext) => e.name.endsWith(ext))) {
+      changed += await prefixFile(p);
+    }
+  }
+  return changed;
+}
+
 await fs.rm(OUT, { recursive: true, force: true });
 await copyDir(DIST, OUT);
 const rewritten = await rewriteTree(OUT);
 await walkHtml(OUT);
-console.log(`Prepared ${OUT} with base href ${BASE} (rewrote ${rewritten} asset files)`);
+const prefixed = await walkDeployFiles(OUT);
+console.log(
+  `Prepared ${OUT} with base href ${BASE} (rewrote ${rewritten} asset files, prefixed ${prefixed} files)`
+);
