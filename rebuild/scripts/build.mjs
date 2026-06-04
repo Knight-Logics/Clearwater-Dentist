@@ -161,6 +161,7 @@ async function main() {
   const { rewriteTree } = await import('./rewrite-cdn-urls.mjs');
   const n = await rewriteTree(DIST);
   console.log(`Rewrote CDN URLs in ${n} dist files`);
+  await import('./fix-missing-assets.mjs');
 }
 
 main();

@@ -24,7 +24,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Prepare static site for GitHub Pages
-        run: node rebuild/scripts/prepare-pages.mjs
+        run: node rebuild/scripts/fix-missing-assets.mjs rebuild/dist && node rebuild/scripts/prepare-pages.mjs
         env:
           PAGES_BASE: /Clearwater-Dentist/
 
