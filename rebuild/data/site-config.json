@@ -1,0 +1,37 @@
+{
+  "phoneDisplay": "(727) 285-8132",
+  "phoneTel": "+17272858132",
+  "bookingUrl": "https://bookit.dentrixascend.com/soe/new/dental?pid=ASC2000000000940&mode=externalLink",
+  "googleReviewUrl": "https://www.google.com/maps/place/?q=place_id:ChIJddsi0kbuwogRVbiZCHZSQ3s",
+  "formEndpoint": "#cw-lead-form",
+  "reviews": [
+    {
+      "name": "Verified Google Patient",
+      "text": "I have a fear of dentists due to past experiences. The doctor was very nice and knowledgeable, explaining everything and making me feel comfortable. Lyndsay the hygienist was absolutely amazing — gentle, patient, and thorough. Thank you to the entire team!",
+      "stars": 5
+    },
+    {
+      "name": "Dennis C.",
+      "text": "Several damaged and missing teeth repaired with natural-looking crowns and bridges. After restoring the foundation, they brightened my smile with professional whitening — a fresh, confident result.",
+      "stars": 5
+    },
+    {
+      "name": "Jackie A.",
+      "text": "My smile was rebuilt with crowns, bridges, and fillings. Extractions and deep cleanings supported long-term health. Every restoration looks natural and feels comfortable.",
+      "stars": 5
+    },
+    {
+      "name": "Susan C.",
+      "text": "Multiple teeth restored with natural-looking crowns. Each crown was custom-shaped and color-matched — a consistent, confident look across my entire smile.",
+      "stars": 5
+    }
+  ],
+  "galleryCaptions": {
+    "Nature's Symphony": "Therapy dog visit at our office",
+    "Breathtaking colors of our planet": "Anxiety-free care with our therapy dog program",
+    "Faces of Humanity": "Community event — Clearwater Dentist",
+    "Portraits of people from around the globe": "Supporting families in Pinellas County",
+    "Beyond Boundaries": "Our team at Clearwater Dentist",
+    "Visual odyssey across continents": "Meet Dr. Nadia and our clinical team"
+  }
+}

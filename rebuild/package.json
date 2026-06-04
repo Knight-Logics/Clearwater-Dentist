@@ -9,7 +9,8 @@
     "assets:css": "node scripts/download-css-assets.mjs",
     "build": "node scripts/extract-pages.mjs && node scripts/download-assets.mjs && node scripts/build.mjs",
     "build:fast": "node scripts/build.mjs",
-    "pages:deploy": "node scripts/fix-missing-assets.mjs && node scripts/prepare-pages.mjs",
+    "fix": "node scripts/fix-missing-assets.mjs && node scripts/apply-rebuild-fixes.mjs",
+    "pages:deploy": "node scripts/fix-missing-assets.mjs && node scripts/apply-rebuild-fixes.mjs && node scripts/prepare-pages.mjs",
     "serve": "npx --yes serve dist -l 3457",
     "screenshot": "node scripts/screenshot-compare.mjs"
   },

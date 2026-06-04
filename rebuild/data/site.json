@@ -4,12 +4,12 @@
   "siteAlias": "a227a250",
   "platform": "Duda (DUDAONE)",
   "agency": "Xpress, INC",
-  "phone": "(727) 797-8444",
+  "phone": "(727) 285-8132",
   "phoneSecondary": "(727) 285-8132",
-  "phoneTel": "7277978444",
+  "phoneTel": "+17272858132",
   "email": "info@clearwaterdentist.com",
   "doctor": "Dr. Nadia Pokrovskaya, D.M.D.",
-  "bookingUrl": "https://live.dentrixascend.com/appointments/setup",
+  "bookingUrl": "https://bookit.dentrixascend.com/soe/new/dental?pid=ASC2000000000940&mode=externalLink",
   "address": {
     "street": "1700 N McMullen Booth Rd, Ste A1",
     "city": "Clearwater",
@@ -18,8 +18,15 @@
   },
   "fonts": {
     "google": "https://irp.cdn-website.com/fonts/css2?family=Be+Vietnam:ital,wght@0,100;0,200;0,300;0,400;0,600;0,700;0,800;0,900&family=Fjalla+One:ital,wght@0,400&family=Epilogue:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&subset=latin-ext&display=swap",
-    "primary": ["Epilogue", "Be Vietnam", "Poppins", "Montserrat", "Fjalla One"]
+    "primary": [
+      "Epilogue",
+      "Be Vietnam",
+      "Poppins",
+      "Montserrat",
+      "Fjalla One"
+    ]
   },
   "hours": "Mon–Fri 9:00 AM – 5:00 PM",
-  "social": {}
+  "social": {},
+  "googleReviewUrl": "https://www.google.com/maps/place/?q=place_id:ChIJddsi0kbuwogRVbiZCHZSQ3s"
 }

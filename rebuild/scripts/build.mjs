@@ -96,6 +96,7 @@ function processPage(html, pagePath) {
   $('head').append(`
 <script src="/cdn/static/libs/jquery/jquery-3.7.0.min.js" defer></script>
 <link rel="stylesheet" href="/css/replica-fixes.css">
+<link rel="stylesheet" href="/css/knight-upgrades.css">
 <link rel="stylesheet" href="/css/duda-animations.css">
 <link rel="stylesheet" href="/css/flexslider.css">
 `);
@@ -106,10 +107,11 @@ function processPage(html, pagePath) {
 <script src="/js/duda-animations.js" defer></script>
 <script src="/js/duda-nav.js" defer></script>
 <script src="/js/site.js" defer></script>
+<script src="/js/knight-upgrades.js" defer></script>
 `);
 
   $('body').addClass('clearwater-replica-body');
-  $('html').addClass('clearwater-replica');
+  $('html').addClass('clearwater-replica').attr('lang', 'en');
 
   let out = $.html();
   out = rewriteHtml(out);
@@ -162,6 +164,8 @@ async function main() {
   const n = await rewriteTree(DIST);
   console.log(`Rewrote CDN URLs in ${n} dist files`);
   await import('./fix-missing-assets.mjs');
+  const { applyRebuildFixes } = await import('./apply-rebuild-fixes.mjs');
+  applyRebuildFixes(DIST);
 }
 
 main();
