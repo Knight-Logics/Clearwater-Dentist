@@ -3,6 +3,7 @@
 import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import { rewriteTree } from './rewrite-cdn-urls.mjs';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, '..');
@@ -22,14 +23,24 @@ async function copyDir(src, dest) {
 
 async function injectBase(file) {
   let html = await fs.readFile(file, 'utf8');
-  if (html.includes('data-github-pages-base')) return;
-  const tag = `<base href="${BASE}" data-github-pages-base>`;
-  if (html.includes('<head>')) {
-    html = html.replace('<head>', `<head>\n  ${tag}`);
-  } else {
-    html = tag + html;
+  let changed = false;
+  if (!html.includes('data-github-pages-base')) {
+    const tag = `<base href="${BASE}" data-github-pages-base>`;
+    if (html.includes('<head>')) {
+      html = html.replace('<head>', `<head>\n  ${tag}`);
+    } else {
+      html = tag + html;
+    }
+    changed = true;
   }
-  await fs.writeFile(file, html, 'utf8');
+  if (!html.includes('jquery-3.7.0.min.js')) {
+    html = html.replace(
+      '<head>',
+      '<head>\n  <script src="/cdn/static/libs/jquery/jquery-3.7.0.min.js" defer></script>'
+    );
+    changed = true;
+  }
+  if (changed) await fs.writeFile(file, html, 'utf8');
 }
 
 async function walkHtml(dir) {
@@ -42,5 +53,6 @@ async function walkHtml(dir) {
 
 await fs.rm(OUT, { recursive: true, force: true });
 await copyDir(DIST, OUT);
+const rewritten = await rewriteTree(OUT);
 await walkHtml(OUT);
-console.log(`Prepared ${OUT} with base href ${BASE}`);
+console.log(`Prepared ${OUT} with base href ${BASE} (rewrote ${rewritten} asset files)`);

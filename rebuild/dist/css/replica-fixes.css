@@ -74,9 +74,43 @@ a.currentPage {
   font-weight: 700;
 }
 
-/* Video embeds responsive */
-video,
-iframe[src*="youtube"],
-iframe[src*="google.com/maps"] {
+/* Hero / section backgrounds — Duda uses CSS background-image on column IDs */
+.dmRespRow,
+.dmRespCol {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+/* Hero panels & slider — always visible on static host (no Duda runtime) */
+.flexslider .slides > li,
+.flexslider .slides > li img,
+.dmImageSlider .slides > li {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+.flexslider,
+.dmImageSlider {
+  min-height: 280px;
+}
+
+/* Video elements */
+video {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  background: #000;
+}
+
+/* Prevent broken-image icon flash */
+img[src^='/cdn/'] {
+  min-height: 24px;
+}
+
+iframe[src*='youtube'],
+iframe[src*='google.com/maps'] {
   max-width: 100%;
 }

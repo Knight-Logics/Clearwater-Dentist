@@ -6,8 +6,10 @@
   "scripts": {
     "pages": "node scripts/extract-pages.mjs",
     "assets": "node scripts/download-assets.mjs",
+    "assets:css": "node scripts/download-css-assets.mjs",
     "build": "node scripts/extract-pages.mjs && node scripts/download-assets.mjs && node scripts/build.mjs",
     "build:fast": "node scripts/build.mjs",
+    "pages:deploy": "node scripts/prepare-pages.mjs",
     "serve": "npx --yes serve dist -l 3457",
     "screenshot": "node scripts/screenshot-compare.mjs"
   },

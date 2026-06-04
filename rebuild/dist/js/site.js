@@ -1,5 +1,9 @@
 /** Clearwater Dentist replica — site hooks (CRM form, tracking placeholders) */
 (function () {
+  window.handleImageLoadError = function (el) {
+    if (el && el.tagName === 'IMG') el.style.opacity = '0.3';
+  };
+
   /* Sticky header shadow on scroll */
   const header = document.querySelector('.dmHeader');
   if (header) {

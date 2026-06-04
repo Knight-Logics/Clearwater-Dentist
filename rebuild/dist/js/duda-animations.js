@@ -4,6 +4,16 @@
 (function () {
   const REVEAL = ['fadeInUp', 'fadeInDown', 'fadeInLeft', 'fadeInRight', 'fadeIn', 'zoomIn'];
 
+  function isHeroOrNav(el) {
+    return !!(
+      el.closest('.dmHeader') ||
+      el.closest('.flexslider') ||
+      el.closest('.dmImageSlider') ||
+      el.closest('[data-widget-type="imageSlider"]') ||
+      el.closest('.dmHomeSection')
+    );
+  }
+
   function pickAnim(el) {
     for (const a of REVEAL) {
       if (el.classList.contains(a)) return a;
@@ -16,7 +26,7 @@
   }
 
   function prep(el) {
-    if (el.dataset.revealReady) return;
+    if (el.dataset.revealReady || isHeroOrNav(el)) return;
     el.dataset.revealReady = '1';
     el.style.opacity = '0';
     el.style.transform = 'translateY(24px)';
@@ -33,7 +43,7 @@
   const targets = [];
   REVEAL.forEach((cls) => {
     document.querySelectorAll('.' + cls).forEach((el) => {
-      if (!el.classList.contains('revealed')) targets.push(el);
+      if (!el.classList.contains('revealed') && !isHeroOrNav(el)) targets.push(el);
     });
   });
   document.querySelectorAll('[data-anim]').forEach((el) => targets.push(el));
@@ -67,10 +77,11 @@
     slider.dataset.init = '1';
 
     const slides = slider.querySelectorAll('.slides > li');
-    if (slides.length < 2) {
-      slides.forEach((s) => (s.style.display = 'block'));
-      return;
-    }
+    slides.forEach((s) => {
+      s.style.display = 'block';
+      s.style.opacity = '1';
+    });
+    if (slides.length < 2) return;
 
     let idx = 0;
     slides.forEach((s, i) => {

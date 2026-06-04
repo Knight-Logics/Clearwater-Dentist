@@ -94,6 +94,7 @@ function processPage(html, pagePath) {
 
   /* Inject replica assets before </head> */
   $('head').append(`
+<script src="/cdn/static/libs/jquery/jquery-3.7.0.min.js" defer></script>
 <link rel="stylesheet" href="/css/replica-fixes.css">
 <link rel="stylesheet" href="/css/duda-animations.css">
 <link rel="stylesheet" href="/css/flexslider.css">
@@ -157,6 +158,9 @@ async function main() {
     }
   }
   console.log('\nDone → dist/');
+  const { rewriteTree } = await import('./rewrite-cdn-urls.mjs');
+  const n = await rewriteTree(DIST);
+  console.log(`Rewrote CDN URLs in ${n} dist files`);
 }
 
 main();
