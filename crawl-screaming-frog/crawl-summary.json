@@ -1,0 +1,701 @@
+{
+  "crawledAt": "2026-06-04T03:03:34.979Z",
+  "total": 72,
+  "statusCounts": {
+    "undefined": 72
+  },
+  "missingH1": [],
+  "duplicateTitles": [],
+  "duplicateH1s": [],
+  "shortMeta": [
+    {
+      "url": "https://www.clearwaterdentist.com/pediatric-dentistry-establishing-healthy-habits-early-on",
+      "title": "Pediatric Dentistry: Establishing Healthy Habits Early On",
+      "h1Count": 0,
+      "h1": "",
+      "meta": "Understand pediatric dentistry",
+      "metaLen": 30,
+      "wordCount": 4992,
+      "phones": "(727) 797-8444|(727) 285-8132|727-591-4577|727-610-7702|727-300-0253",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/5-signs-you-need-an-immediate-emergency-dental-extraction",
+      "title": "5 Signs You Need an Immediate Emergency Dental Extraction",
+      "h1Count": 0,
+      "h1": "",
+      "meta": "Don",
+      "metaLen": 3,
+      "wordCount": 5000,
+      "phones": "(727) 797-8444|(727) 285-8132|727-591-4577|727-610-7702|727-300-0253",
+      "booking": "dentrix"
+    }
+  ],
+  "longMeta": [
+    {
+      "url": "https://www.clearwaterdentist.com/financing/carecredit",
+      "title": "CareCredit Dental Financing in Clearwater, FL | Clearwater Dentist",
+      "h1Count": 1,
+      "h1": "CareCredit Dental Financing",
+      "meta": "We accept the CareCredit credit card to help you finance dental care with flexible payment options, instant decisions, and no annual fee. Contact us to learn more!",
+      "metaLen": 163,
+      "wordCount": 3215,
+      "phones": "(727) 797-8444|(727) 285-8132|727-591-4577|727-610-7702|727-300-0253",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/sunbit",
+      "title": "Sunbit Dental Financing in Clearwater, FL | Clearwater Dentist",
+      "h1Count": 0,
+      "h1": "",
+      "meta": "Apply for Sunbit financing for your dental services and get fast approval, flexible terms, and manageable monthly payments that suit your budget. Contact us now!",
+      "metaLen": 161,
+      "wordCount": 2675,
+      "phones": "(727) 797-8444|(727) 285-8132|727-591-4577|727-610-7702|727-300-0253",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/Invisalign-service-clearwater-fl",
+      "title": "Invisalign Treatment in Clearwater, FL | Clearwater Dentist",
+      "h1Count": 1,
+      "h1": "Invisalign Service at Clearwater, FL",
+      "meta": "Invisalign straightens crooked teeth with clear aligners that fit your lifestyle. Improve alignment, oral health, and confidence with a personalized care. Call now!",
+      "metaLen": 164,
+      "wordCount": 8998,
+      "phones": "(727) 797-8444|(727) 285-8132|727-591-4577|727-610-7702|727-300-0253",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/root-canal-clearwater-fl",
+      "title": "Root Canal Treatment in Clearwater, FL | Clearwater Dentist",
+      "h1Count": 1,
+      "h1": "Root Canal at Clearwater, FL",
+      "meta": "Treat an infected tooth with advanced root canal therapy in Clearwater, FL. We remove infected pulp, clean the tooth, and help you keep your natural smile. Call now!",
+      "metaLen": 165,
+      "wordCount": 8638,
+      "phones": "(727) 797-8444|(727) 285-8132|727-591-4577|727-610-7702|727-300-0253",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/gum-disease-treatment",
+      "title": "Gum Disease Treatment in Clearwater, FL | Clearwater Dentist",
+      "h1Count": 1,
+      "h1": "Gum Disease Treatment at Clearwater, FL",
+      "meta": "We provide gum disease treatment in Clearwater, FL, check for common gum disease symptoms, and offer dental care to reduce swelling and infection. Consult today!",
+      "metaLen": 161,
+      "wordCount": 5385,
+      "phones": "(727) 285-8132|(727) 797-8444|727-591-4577|727-610-7702|727-300-0253",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/tooth-extraction-clearwater-fl",
+      "title": "Tooth Extraction Treatment in Clearwater, FL | Clearwater Dentist",
+      "h1Count": 1,
+      "h1": "Tooth Extraction Service at Clearwater, FL",
+      "meta": "From severe decay to infection, we offer tooth extractions and wisdom teeth removal in Clearwater, FL with a gentle plan and supportive care. Schedule a visit today.",
+      "metaLen": 165,
+      "wordCount": 8776,
+      "phones": "(727) 797-8444|(727) 285-8132|727-591-4577|727-610-7702|727-300-0253",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/crowns-and-bridges",
+      "title": "Dental Crowns &amp; Bridges Treatment in Clearwater, FL | Clearwater Dentist",
+      "h1Count": 1,
+      "h1": "Dental Crowns &amp; Bridges at Clearwater, FL",
+      "meta": "Fix chipped, cracked, or worn teeth with custom crowns and bridges. Natural looking restorations that improve chewing comfort and confidence. Book an appointment now.",
+      "metaLen": 166,
+      "wordCount": 7820,
+      "phones": "(727) 797-8444|(727) 285-8132|727-591-4577|727-610-7702|727-300-0253",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/dental-implants-clearwater-fl",
+      "title": "Dental Implant Treatment in Clearwater, FL | Clearwater Dentist",
+      "h1Count": 1,
+      "h1": "Dental Implants at Clearwater, FL",
+      "meta": "From single implants to full arch implant dentures, we offer secure tooth replacement that looks natural and helps you chew comfortably. Book a consultation now!",
+      "metaLen": 161,
+      "wordCount": 12373,
+      "phones": "(727) 797-8444|(727) 285-8132|727-591-4577|727-610-7702|727-300-0253",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/blog",
+      "title": "Dental Blog &amp; Oral Health Tips | Clearwater Dentist",
+      "h1Count": 1,
+      "h1": "Check Out Our Blog",
+      "meta": "Read our dental blog for helpful tips on oral hygiene, cosmetic treatments, restorative care, and emergency dentistry services to keep your smile healthy. Learn more!",
+      "metaLen": 166,
+      "wordCount": 3407,
+      "phones": "(727) 797-8444|(727) 285-8132|727-591-4577|727-610-7702|727-300-0253",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/general-dentistry",
+      "title": "General Dentistry in Clearwater, FL | Clearwater Dentist",
+      "h1Count": 1,
+      "h1": "General Dentistry at Clearwater, FL",
+      "meta": "Get general dentistry services in Clearwater, FL, including routine exams, cleanings, fluoride treatments, and emergency dental care for your whole family. Book now!",
+      "metaLen": 165,
+      "wordCount": 9919,
+      "phones": "(727) 285-8132|(727) 797-8444|727-591-4577|727-610-7702|727-300-0253",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/facial-esthetics",
+      "title": "Facial Esthetics Treatment in Clearwater, FL | Clearwater Dentist",
+      "h1Count": 1,
+      "h1": "Facial &amp; Laser Esthetic in Clearwater, FL",
+      "meta": "Get facial esthetics treatment in Clearwater, FL. We offer non-surgical face lifts, facial rejuvenation, and other non-invasive facial treatments for natural results.",
+      "metaLen": 166,
+      "wordCount": 5334,
+      "phones": "(727) 285-8132|(727) 797-8444|727-591-4577|727-610-7702|727-300-0253",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/porcelain-veneers-clearwater-fl",
+      "title": "Porcelain Veneers Treatment in Clearwater, FL | Clearwater Dentist",
+      "h1Count": 1,
+      "h1": "Porcelain Veneers at Clearwater, FL",
+      "meta": "Porcelain veneers are thin shells bonded to front teeth to cover stains, chips, small gaps, and worn edges for a natural looking smile. Book a appointment today.",
+      "metaLen": 161,
+      "wordCount": 6142,
+      "phones": "(727) 285-8132|(727) 797-8444|727-591-4577|727-610-7702|727-300-0253",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/smile-makeover",
+      "title": "Smile Makeover Treatment in Clearwater, FL | Clearwater Dentist",
+      "h1Count": 1,
+      "h1": "Smile Makeover Service in Clearwater, FL",
+      "meta": "Get a smile makeover in Clearwater, FL with veneers, whitening, crowns, bonding, or Invisalign. Cosmetic options to improve color, shape, and alignment. Book now.",
+      "metaLen": 162,
+      "wordCount": 5324,
+      "phones": "(727) 285-8132|(727) 797-8444|727-591-4577|727-610-7702|727-300-0253",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/teeth-whitening-clearwater-fl",
+      "title": "Teeth Whitening Treatment in Clearwater, FL | Clearwater Dentist",
+      "h1Count": 1,
+      "h1": "Teeth Whitening at Clearwater, FL",
+      "meta": "Want a brighter smile? Our teeth whitening service offers professional treatments with in-office and take-home options to lift stains safely and quickly. Book now!",
+      "metaLen": 163,
+      "wordCount": 5948,
+      "phones": "(727) 285-8132|(727) 797-8444|727-591-4577|727-610-7702|727-300-0253",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com",
+      "title": "Family &amp; Cosmetic Dentistry in Clearwater, FL | Clearwater Dentist",
+      "h1Count": 4,
+      "h1": "Welcome To",
+      "meta": "Clearwater Dentist provides family dental services in Clearwater, FL, including general dentistry, cosmetic dentistry, teeth whitening, and more. Book an appointment!",
+      "metaLen": 166,
+      "wordCount": 10055,
+      "phones": "(727) 758-0243|(727) 285-8132|(727) 797-8444|7277580243|727-591-4577|727-610-7702|727-300-0253",
+      "booking": "dentrix|weave"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/meet-the-team",
+      "title": "Meet The Team | Clearwater Dentist",
+      "h1Count": 1,
+      "h1": "Meet The Team - Clearwater Dentist",
+      "meta": "Meet our friendly dental team in Clearwater, FL. Our assistants and office staff provide quality dental care, support, and comfortable experience for every patient.",
+      "metaLen": 164,
+      "wordCount": 5977,
+      "phones": "(727) 797-8444|(727) 285-8132|727-591-4577|727-610-7702|727-300-0253",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/tmj-treatment-clearwater-fl",
+      "title": "TMJ Treatment in Clearwater, FL | Clearwater Dentist",
+      "h1Count": 1,
+      "h1": "TMJ Treatment at Clearwater, FL",
+      "meta": "Struggling with jaw pain or teeth grinding? Our TMJ specialists can help with TMJ treatment, oral appliances, and care for all TMJ symptoms. Book your consultation!",
+      "metaLen": 164,
+      "wordCount": 6627,
+      "phones": "(727) 285-8132|(727) 797-8444|727-591-4577|727-610-7702|727-300-0253",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/meet-the-doctor",
+      "title": "Meet Dr. Nadia Pokrovskaya | Clearwater Dentist",
+      "h1Count": 1,
+      "h1": "Meet Dr. Nadia Pokrovskaya",
+      "meta": "Meet Dr. Nadia Pokrovskaya, trusted dentist with 27+ years of experience in general dentistry, cosmetic dental, implants, and sedation services in Clearwater, FL.",
+      "metaLen": 162,
+      "wordCount": 4802,
+      "phones": "(727) 797-8444|(727) 285-8132|727-591-4577|727-610-7702|727-300-0253",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/oral-cancer-screening",
+      "title": "Oral Cancer Screening in Clearwater, FL | Clearwater Dentist",
+      "h1Count": 1,
+      "h1": "Oral Cancer Screening at Clearwater, FL",
+      "meta": "Our dentist provides oral cancer screening services, checks for early oral cancer signs and symptoms, and explains what to expect if oral cancer treatment is needed.",
+      "metaLen": 165,
+      "wordCount": 4903,
+      "phones": "(727) 285-8132|(727) 797-8444|727-591-4577|727-610-7702|727-300-0253",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/laser-dentistry",
+      "title": "Laser Dentistry in Clearwater, FL | Clearwater Dentist",
+      "h1Count": 1,
+      "h1": "Laser Dentistry at Clearwater, FL",
+      "meta": "Clearwater dentist offers laser dentistry with the Solea® dental laser, providing gentle, needle-free, drill-free treatments for teeth and gums with faster healing.",
+      "metaLen": 164,
+      "wordCount": 6286,
+      "phones": "(727) 285-8132|(727) 797-8444|727-591-4577|727-610-7702|727-300-0253",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/dental-therapy-dogs-clearwater-fl",
+      "title": "Dental Therapy Dogs in Clearwater, FL | Clearwater Dentist",
+      "h1Count": 1,
+      "h1": "Dental Therapy Dogs at Clearwater, FL",
+      "meta": "Our Clearwater dentist offers trained therapy dogs to reduce dental anxiety and provide gentle, comfortable dental care for kids and adults. Book consultation now!",
+      "metaLen": 163,
+      "wordCount": 5568,
+      "phones": "(727) 285-8132|(727) 797-8444|727-591-4577|727-610-7702|727-300-0253",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/cosmetic-dentistry",
+      "title": "Cosmetic Dentistry in Clearwater, FL | Clearwater Dentist",
+      "h1Count": 1,
+      "h1": "Cosmetic Dentistry in Clearwater, FL",
+      "meta": "Improve your smile with cosmetic dentistry in Clearwater, FL. Choose whitening, veneers, bonding, Invisalign, or a full smile makeover. Schedule a consultation today.",
+      "metaLen": 166,
+      "wordCount": 8212,
+      "phones": "(727) 797-8444|(727) 285-8132|727-591-4577|727-610-7702|727-300-0253",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/solea-sleep",
+      "title": "Solea Sleep Snoring Treatment in Clearwater, FL | Clearwater Dentist",
+      "h1Count": 1,
+      "h1": "Solea Sleep Snoring Treatment",
+      "meta": "Get sleep disorder solutions with Solea Sleep laser therapy and oral appliance treatments for snoring and mild sleep apnea to help you breathe better and rest well.",
+      "metaLen": 164,
+      "wordCount": 2996,
+      "phones": "(727) 285-8132|(727) 797-8444|727-591-4577|727-610-7702|727-300-0253",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/before-and-after",
+      "title": "Before &amp; After Dental Gallery | Clearwater Dentist",
+      "h1Count": 1,
+      "h1": "Before &amp; After Dental Gallery",
+      "meta": "Browse before and after images of dental treatments including implants, crowns, and smile makeover to see the results our patients. Start your smile transformation!",
+      "metaLen": 164,
+      "wordCount": 4592,
+      "phones": "(727) 797-8444|(727) 285-8132|7277580243|727-591-4577|727-610-7702|727-300-0253",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/XERF-skin-tightening",
+      "title": "XERF Skin Tightening in Clearwater, FL | Clearwater Dentist",
+      "h1Count": 1,
+      "h1": "XERF Skin Tightening at Clearwater Dentist",
+      "meta": "Our dentist uses XERF to lift and firm your skin. This non-surgical treatment reduces wrinkles and refreshes your face. Book your appointment for XERF treatment!",
+      "metaLen": 161,
+      "wordCount": 4799,
+      "phones": "(727) 285-8132|(727) 797-8444|727-591-4577|727-610-7702|727-300-0253",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/Ultra-skin-resurfacing",
+      "title": "LaseMD Ultra Laser Treatment in Clearwater, FL | Clearwater Dentist",
+      "h1Count": 1,
+      "h1": "LaseMD Ultra Laser Treatment",
+      "meta": "At Clearwater Dentist, we use LaseMD Ultra for non-surgical skin rejuvenation, targeting wrinkles, uneven skin tone, sun damage, and early signs of aging. Book now!",
+      "metaLen": 164,
+      "wordCount": 4053,
+      "phones": "(727) 285-8132|(727) 797-8444|7277580243|727-591-4577|727-610-7702|727-300-0253",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/anti-anxiety-dentist-office",
+      "title": "Anti-Anxiety Dentist Office in Clearwater, FL | Clearwater Dentist",
+      "h1Count": 1,
+      "h1": "Anti-Anxiety Dentist Office in Clearwater",
+      "meta": "Visit our anti-anxiety dentist in Clearwater, FL for gentle dental care, sedation dentistry, emergency dental services, and cosmetic treatments. Book consultation!",
+      "metaLen": 163,
+      "wordCount": 4098,
+      "phones": "(727) 797-8444|(727) 285-8132|727-591-4577|727-610-7702|727-300-0253",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/restorative-dentist-clearwater",
+      "title": "Full-Mouth Reconstruction Treatment in Clearwater, FL | Clearwater Dentist",
+      "h1Count": 1,
+      "h1": "Full-Mouth Reconstruction Treatment in Clearwater",
+      "meta": "From a single tooth repair to full mouth reconstruction, get lasting restorative dentistry in Clearwater, FL. Same day appointments plus gentle, anxiety-friendly care.",
+      "metaLen": 167,
+      "wordCount": 5731,
+      "phones": "(727) 285-8132|(727) 797-8444|727-591-4577|727-610-7702|727-300-0253",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/financing",
+      "title": "Dental Financing Options in Clearwater, FL | Clearwater Dentist",
+      "h1Count": 1,
+      "h1": "Dental Financing Options",
+      "meta": "We offer multiple dental financing solutions for every credit level, including LendingClub, CareCredit, Cherry, Sunbit, Alphaeon, and HFD. Schedule a consultation!",
+      "metaLen": 163,
+      "wordCount": 3508,
+      "phones": "(727) 797-8444|(727) 285-8132|(727-285-8132|727-591-4577|727-610-7702|727-300-0253",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/blog/questions-to-ask-dentist-consultation",
+      "title": "10 Questions to Ask at Your Dental Consultation | Clearwater Dentist",
+      "h1Count": 0,
+      "h1": "",
+      "meta": "Prepare for your dental consultation with these 10 essential questions about treatment options, costs, timelines, and more. Expert guidance from Clearwater Dentist.",
+      "metaLen": 164,
+      "wordCount": 4457,
+      "phones": "(727) 797-8444|(727) 285-8132|727-591-4577|727-610-7702|727-300-0253",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/blog/smile-makeover-timeline",
+      "title": "How Long Does a Smile Makeover Take? Complete Timeline | Clearwater",
+      "h1Count": 0,
+      "h1": "",
+      "meta": "A complete smile makeover is often achievable within 1 month. Learn the week by week timeline for veneers, bonding, and cosmetic dentistry at Clearwater Dentist.",
+      "metaLen": 161,
+      "wordCount": 4460,
+      "phones": "(727) 797-8444|(727) 285-8132|727-591-4577|727-610-7702|727-300-0253",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/needle-free-dentistry-in-clearwater-discover-the-solea-laser-experience",
+      "title": "🦷 Needle-Free Dentistry in Clearwater: Discover the Solea Laser Experience",
+      "h1Count": 0,
+      "h1": "",
+      "meta": "Solea laser dentistry lets you get fillings and other treatments without needles or discomfort. Learn how minimally invasive approach makes visits easier. Read more!",
+      "metaLen": 165,
+      "wordCount": 4245,
+      "phones": "(727) 797-8444|(727) 285-8132|727-591-4577|727-610-7702|727-300-0253",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/dental-implants-in-clearwater-why-material-matters-how-our-team-makes-it-easy",
+      "title": "Dental Implants in Clearwater: Why Material Matters &amp; How Our Team Makes It Easy | Clearwater Dentist",
+      "h1Count": 0,
+      "h1": "",
+      "meta": "Learn the differences between titanium and zirconia dental implants, their benefits, and how our dental team ensures comfortable, and long-lasting smile restorations.",
+      "metaLen": 166,
+      "wordCount": 4511,
+      "phones": "(727) 797-8444|(727) 285-8132|727-591-4577|727-610-7702|727-300-0253",
+      "booking": "dentrix"
+    }
+  ],
+  "phoneVariants": [
+    "(727) 797-8444",
+    "(727) 285-8132",
+    "727-591-4577",
+    "727-610-7702",
+    "727-300-0253",
+    "(727) 758-0243",
+    "7277580243",
+    "(727-285-8132",
+    "727-797-8444"
+  ],
+  "thinPages": [],
+  "bookingPages": [
+    {
+      "url": "https://www.clearwaterdentist.com/financing/carecredit",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/sunbit",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/Invisalign-service-clearwater-fl",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/contact-us",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/root-canal-clearwater-fl",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/gum-disease-treatment",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/tooth-extraction-clearwater-fl",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/crowns-and-bridges",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/dental-implants-clearwater-fl",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/blog",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/general-dentistry",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/emergency-dentistry-clearwater-fl",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/pediatric-dentistry-clearwater-fl",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/facial-esthetics",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/holistic-orthodontics",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/porcelain-veneers-clearwater-fl",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/smile-makeover",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/teeth-whitening-clearwater-fl",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/sedation-dentistry-clearwater-fl",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/bone-grafting",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com",
+      "booking": "dentrix|weave"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/meet-the-team",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/tmj-treatment-clearwater-fl",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/meet-the-doctor",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/oral-cancer-screening",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/laser-dentistry",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/implant-supported-dentures-clearwater-fl",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/dental-therapy-dogs-clearwater-fl",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/cosmetic-dentistry",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/solea-sleep",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/before-and-after",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/XERF-skin-tightening",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/Ultra-skin-resurfacing",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/clearwater-dentist-dental-benefit-plans",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/anti-anxiety-dentist-office",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/restorative-dentist-clearwater",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/financing",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/alphaeon",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/blog/dental-cleaning-frequency-implants",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/blog/dentist-for-anxious-patients-clearwater",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/blog/emergency-dentist-clearwater-fl",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/blog/dental-implant-process-timeline",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/blog/are-dental-implants-painful",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/blog/how-long-do-dental-implants-last",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/blog/questions-to-ask-dentist-consultation",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/blog/smile-makeover-timeline",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/blog/dental-implant-timeline",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/blog/havent-been-to-dentist-in-years",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/new-patient-faqs",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/clearwater-dentist-join-the-safety-harbor-chamber-of-commerce",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/the-clearwater-glow-up-5-secrets-to-a-vacation-ready-smile-without-the-resort-price-tag",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/v-soft-pdo-thread-lifts-in-clearwater-lift-smooth-and-rejuvenate-without-surgery",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/needle-free-dentistry-in-clearwater-discover-the-solea-laser-experience",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/dental-implants-in-clearwater-why-material-matters-how-our-team-makes-it-easy",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/choosing-the-right-procedures-for-your-smile-makeover",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/invisalign-and-oral-health-beyond-straight-teeth",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/pediatric-dentistry-establishing-healthy-habits-early-on",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/dental-anxiety-tips-for-overcoming-fear-of-the-dentist",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/the-importance-of-regular-dental-check-ups-for-all-ages",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/the-impact-of-missing-teeth-on-your-overall-health",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/the-benefits-of-a-family-dentist-comprehensive-care-under-one-roof",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/what-is-a-dental-therapy-dog",
+      "booking": "dentrix|weave"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/taming-toothaches-home-remedies-and-when-to-see-a-dentist",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/smiling-through-life-the-link-between-oral-health-and-overall-well-being",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/the-latest-advancements-in-cosmetic-dentistry",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/5-signs-you-need-an-immediate-emergency-dental-extraction",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/how-emergency-dentistry-in-clearwater-fl-can-relieve-your-pain",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/cosmetic-dentistry-in-clearwater-fl-types-of-smile-correction-procedures",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/general-dentistry-in-clearwater-fl-the-benefits-of-a-dental-deep-cleaning",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/blog/smile-makeover-timeline-clearwater",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/blog/therapy-dog-dentist-clearwater",
+      "booking": "dentrix"
+    },
+    {
+      "url": "https://www.clearwaterdentist.com/blog/why-clearwater-dentist-dr-nadia",
+      "booking": "dentrix"
+    }
+  ]
+}

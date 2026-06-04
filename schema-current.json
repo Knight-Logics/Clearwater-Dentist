@@ -1,0 +1,59 @@
+{
+  "source": "https://www.clearwaterdentist.com/",
+  "exportedAt": "2026-06-04",
+  "richResultsTest": {
+    "date": "2026-06-03",
+    "validItems": 7,
+    "types": {
+      "localBusiness": { "count": 3, "issues": "non-critical warnings (missing priceRange, image on one block)" },
+      "organization": { "count": 3, "issues": "none" },
+      "reviewSnippets": { "count": 1, "issues": "none" }
+    }
+  },
+  "blocksDetected": [
+    {
+      "@type": "WebSite",
+      "name": "Clearwater Dentist",
+      "url": "https://www.clearwaterdentist.com/"
+    },
+    {
+      "@type": "Dentist",
+      "@id": "https://www.clearwaterdentist.com/#business",
+      "name": "Clearwater Dentist",
+      "notes": "Has logo, image, description; missing priceRange (optional warning)"
+    },
+    {
+      "@type": "Dentist",
+      "@id": "https://www.clearwaterdentist.com/#LocalBusiness",
+      "name": "Family & Cosmetic Dentistry in Clearwater, FL | Clearwater Dentist",
+      "notes": "Uses page title as name — should be business name only"
+    },
+    {
+      "@type": "Dentist",
+      "name": "Clearwater Dentist",
+      "address": {
+        "streetAddress": "1700 N Mcmullen Booth Rd, STE a1",
+        "addressLocality": "Clearwater",
+        "addressRegion": "Florida",
+        "postalCode": "33759"
+      },
+      "geo": { "latitude": "27.984634", "longitude": "-82.719502" },
+      "notes": "Missing image on one block (optional warning)"
+    }
+  ],
+  "issues": [
+    "Three separate Dentist/LocalBusiness blocks — redundant, likely from Duda + manual additions",
+    "One block uses SEO page title as schema name instead of business name",
+    "No Physician entity for Dr. Nadia Pokrovskaya, D.M.D.",
+    "No FAQ schema on service pages despite FAQ-style content",
+    "Review snippet present but aggregateRating not tied to on-page review markup consistently",
+    "Missing openingHoursSpecification in at least one block",
+    "Missing priceRange (non-critical)"
+  ],
+  "recommendations": [
+    "Consolidate to one canonical Dentist + one WebSite + optional Physician",
+    "Add openingHours, telephone (single canonical number), sameAs (GBP, social)",
+    "Add MedicalWebPage + author/reviewer for YMYL blog posts",
+    "Add FAQ schema on implant, emergency, sedation, financing pages"
+  ]
+}

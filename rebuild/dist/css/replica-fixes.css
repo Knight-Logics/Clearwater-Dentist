@@ -1,0 +1,82 @@
+/* Clearwater Dentist replica — layout & Duda parity fixes */
+
+.clearwater-replica-body {
+  margin: 0;
+  overflow-x: hidden;
+}
+
+.clearwater-outer {
+  min-height: 100vh;
+}
+
+.dmHeader.is-scrolled {
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Mobile nav drawer */
+.cw-nav-backdrop {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 9998;
+}
+
+.cw-nav-backdrop.is-visible {
+  display: block;
+}
+
+body.cw-nav-open .dmNavigation,
+body.cw-nav-open #dmNav,
+body.cw-nav-open .dmHeader nav {
+  display: block !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  background: #fff;
+  overflow-y: auto;
+  padding: 24px;
+}
+
+@media (min-width: 1025px) {
+  .cw-nav-backdrop {
+    display: none !important;
+  }
+}
+
+/* Hero slider */
+.flexslider .slides {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.flexslider .slides > li {
+  position: relative;
+}
+
+.slide-button-invisible {
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Images — prevent broken layout */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Current nav highlight */
+a.currentPage {
+  font-weight: 700;
+}
+
+/* Video embeds responsive */
+video,
+iframe[src*="youtube"],
+iframe[src*="google.com/maps"] {
+  max-width: 100%;
+}

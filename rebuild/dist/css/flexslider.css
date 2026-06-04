@@ -1,0 +1,15 @@
+.flexslider {
+  position: relative;
+  zoom: 1;
+}
+.flexslider .slides > li {
+  display: none;
+  -webkit-backface-visibility: hidden;
+}
+.flexslider .slides img {
+  width: 100%;
+  display: block;
+}
+.flexslider .slides > li:first-child {
+  display: block;
+}

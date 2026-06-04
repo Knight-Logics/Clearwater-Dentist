@@ -1,0 +1,17 @@
+{
+  "name": "clearwater-dentist-rebuild",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "pages": "node scripts/extract-pages.mjs",
+    "assets": "node scripts/download-assets.mjs",
+    "build": "node scripts/extract-pages.mjs && node scripts/download-assets.mjs && node scripts/build.mjs",
+    "build:fast": "node scripts/build.mjs",
+    "serve": "npx --yes serve dist -l 3457",
+    "screenshot": "node scripts/screenshot-compare.mjs"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0"
+  }
+}

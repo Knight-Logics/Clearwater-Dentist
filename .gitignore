@@ -1,0 +1,13 @@
+# Dependencies
+**/node_modules/
+
+# Regenerate with npm run assets (dist includes built CDN assets)
+rebuild/public/
+
+# Deploy staging output
+rebuild/pages-deploy/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.log
