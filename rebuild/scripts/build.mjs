@@ -95,8 +95,12 @@ function processPage(html, pagePath) {
   /* Inject replica assets before </head> */
   $('head').append(`
 <script src="/cdn/static/libs/jquery/jquery-3.7.0.min.js" defer></script>
+<link rel="stylesheet" href="/css/design-system.css">
+<link rel="stylesheet" href="/css/cw-header.css">
+<link rel="stylesheet" href="/css/typography-fx.css">
 <link rel="stylesheet" href="/css/replica-fixes.css">
 <link rel="stylesheet" href="/css/knight-upgrades.css">
+<link rel="stylesheet" href="/css/fusco-reviews.css">
 <link rel="stylesheet" href="/css/duda-animations.css">
 <link rel="stylesheet" href="/css/flexslider.css">
 `);
@@ -108,6 +112,7 @@ function processPage(html, pagePath) {
 <script src="/js/duda-nav.js" defer></script>
 <script src="/js/site.js" defer></script>
 <script src="/js/knight-upgrades.js" defer></script>
+<script src="/js/fusco-reviews.js" defer></script>
 `);
 
   $('body').addClass('clearwater-replica-body');

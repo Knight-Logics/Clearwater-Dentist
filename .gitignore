@@ -4,7 +4,16 @@
 # Regenerate with npm run assets (dist includes built CDN assets)
 rebuild/public/
 !rebuild/public/css/knight-upgrades.css
+!rebuild/public/css/fusco-reviews.css
+!rebuild/public/css/design-system.css
+!rebuild/public/css/homepage-upgrades.css
+!rebuild/public/css/cw-header.css
+!rebuild/public/css/typography-fx.css
+!rebuild/public/css/header-bar.css
 !rebuild/public/js/knight-upgrades.js
+!rebuild/public/js/fusco-reviews.js
+!rebuild/public/js/homepage-upgrades.js
+!rebuild/public/js/cw-header.js
 
 # Deploy staging output
 rebuild/pages-deploy/

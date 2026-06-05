@@ -1,0 +1,182 @@
+/* H1 — Knight Logics aura + Moms Table Tops glimmer */
+
+@keyframes cwSlideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-140px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes cwHeroGlimmerSweep {
+  0%,
+  34% {
+    background-position: 0% 50%;
+  }
+  66%,
+  100% {
+    background-position: 188% 50%;
+  }
+}
+
+@keyframes cwSmileGlimmer {
+  0%,
+  34% {
+    background-position: 0% 50%;
+  }
+  66%,
+  100% {
+    background-position: 220% 50%;
+  }
+}
+
+/* Aura glow behind hero intro */
+.cw-hero-unified__intro {
+  position: relative;
+  isolation: isolate;
+}
+
+.cw-hero-unified__intro::before {
+  content: "";
+  position: absolute;
+  left: -2rem;
+  top: 45%;
+  width: min(85vw, 560px);
+  height: min(35vw, 180px);
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(255, 255, 255, 0.25) 0%,
+    rgba(192, 122, 46, 0.35) 28%,
+    rgba(15, 63, 85, 0.2) 52%,
+    transparent 72%
+  );
+  filter: blur(32px);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Welcome — white / blue / orange glimmer + aura */
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+  .cw-hero-welcome.cw-welcome-glimmer {
+    background-image: linear-gradient(
+      112deg,
+      #ffffff 0%,
+      #d4eaf4 14%,
+      #0f3f55 28%,
+      #ffffff 40%,
+      #c07a2e 52%,
+      #ffffff 64%,
+      #1a5a72 76%,
+      #ffffff 88%,
+      #f5ecd8 100%
+    );
+    background-size: 340% auto;
+    background-position: 0% 50%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #fff;
+    animation:
+      cwSlideInLeft 0.9s cubic-bezier(0.22, 1, 0.36, 1) forwards,
+      cwHeroGlimmerSweep 9s ease-in-out 1s infinite;
+    filter: drop-shadow(0 0 18px rgba(255, 255, 255, 0.35))
+      drop-shadow(0 2px 14px rgba(0, 0, 0, 0.45));
+  }
+}
+
+/* Sparkling white smile tagline */
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+  .cw-hero-smile.cw-smile-glimmer {
+    background-image: linear-gradient(
+      112deg,
+      #ffffff 0%,
+      #fffef8 12%,
+      #ffffff 22%,
+      #e8f4ff 32%,
+      #ffffff 42%,
+      #fff9e6 52%,
+      #ffffff 62%,
+      #f0ffff 72%,
+      #ffffff 82%,
+      #fffdf5 92%,
+      #ffffff 100%
+    );
+    background-size: 360% auto;
+    background-position: 0% 50%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: #fff;
+    animation:
+      cwSlideInLeft 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.55s forwards,
+      cwSmileGlimmer 6s ease-in-out 1.5s infinite;
+    filter: drop-shadow(0 0 16px rgba(255, 255, 255, 0.8))
+      drop-shadow(0 2px 10px rgba(0, 0, 0, 0.4));
+  }
+}
+
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+  .cw-hero-unified__title.cw-glimmer-title:not(.cw-sr-only),
+  .clearwater-replica .cw-hero-unified__title:not(.cw-sr-only) {
+    background-image: linear-gradient(
+      112deg,
+      #ffffff 0%,
+      #faf6ec 16%,
+      #e8d4a8 28%,
+      #ffffff 40%,
+      #fffdf8 50%,
+      #ffffff 58%,
+      #c07a2e 70%,
+      #ffffff 82%,
+      #f5ecd8 100%
+    );
+    background-size: 330% auto;
+    background-position: 0% 50%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    animation: cwHeroGlimmerSweep 8.4s ease-in-out infinite;
+    text-shadow: none !important;
+    filter: drop-shadow(0 2px 12px rgba(0, 0, 0, 0.45));
+  }
+}
+
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+  .clearwater-replica h1.cw-glimmer-title:not(.cw-hero-unified__title):not(.cw-hero-welcome) {
+    background-image: linear-gradient(
+      112deg,
+      #0f3f55 0%,
+      #1a5a72 18%,
+      #c07a2e 32%,
+      #0f3f55 44%,
+      #d4a574 56%,
+      #0a2d3d 68%,
+      #c07a2e 80%,
+      #0f3f55 100%
+    );
+    background-size: 280% auto;
+    background-position: 0% 50%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    animation: cwHeroGlimmerSweep 12.5s ease-in-out infinite;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cw-glimmer-title,
+  .cw-hero-unified__title,
+  .cw-smile-glimmer,
+  .cw-welcome-glimmer {
+    animation: none !important;
+    -webkit-text-fill-color: inherit !important;
+    color: #fff !important;
+    background: none !important;
+  }
+}

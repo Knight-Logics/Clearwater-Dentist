@@ -6,6 +6,9 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import * as cheerio from "cheerio";
+import { replaceGoogleReviewsSection } from "./google-reviews-section.mjs";
+import { upgradeHomepage, injectDesignAssets } from "./homepage-upgrades.mjs";
+import { injectCustomHeader } from "./header-replacement.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
@@ -211,9 +214,25 @@ function markDuplicateReviewBlocks($) {
   });
 }
 
+function slimHeaderDom($) {
+  $("#1760599980, #1041713361, #1456751328").remove();
+}
+
+function applyGlimmerTitles($) {
+  $("h1").each((_, el) => {
+    const $el = $(el);
+    if ($el.hasClass("cw-sr-only") || $el.hasClass("cw-hero-welcome")) return;
+    $el.addClass("cw-glimmer-title");
+  });
+}
+
 function injectAssets($, relPath) {
   const head = $("head");
   if (!head.length) return;
+
+  applyGlimmerTitles($);
+  injectCustomHeader($);
+  injectDesignAssets($, { homepage: relPath === "index.html" });
 
   if (!$('link[href*="knight-upgrades.css"]').length) {
     head.append(
@@ -221,9 +240,21 @@ function injectAssets($, relPath) {
     );
   }
 
+  if (!$('link[href*="fusco-reviews.css"]').length) {
+    head.append(
+      '<link rel="stylesheet" href="/css/fusco-reviews.css" data-cw-upgrade="1">'
+    );
+  }
+
   if (!$('script[src*="knight-upgrades.js"]').length) {
     $("body").append(
       '<script src="/js/knight-upgrades.js" defer data-cw-upgrade="1"></script>'
+    );
+  }
+
+  if (!$('script[src*="fusco-reviews.js"]').length) {
+    $("body").append(
+      '<script src="/js/fusco-reviews.js" defer data-cw-upgrade="1"></script>'
     );
   }
 
@@ -259,6 +290,11 @@ function processFile(filePath) {
   fixSchema($);
   fixTherapyDogLink($);
   markDuplicateReviewBlocks($);
+  replaceGoogleReviewsSection($);
+  slimHeaderDom($);
+  if (rel === "index.html") {
+    upgradeHomepage($);
+  }
   injectAssets($, rel);
 
   let out = $.html();
@@ -278,15 +314,25 @@ function updateSiteJson() {
 }
 
 export function applyRebuildFixes(distDir = DIST) {
-  const publicCss = path.join(ROOT, "public", "css", "knight-upgrades.css");
-  const publicJs = path.join(ROOT, "public", "js", "knight-upgrades.js");
+  const assetPairs = [
+    ["css/design-system.css", "css/design-system.css"],
+    ["css/cw-header.css", "css/cw-header.css"],
+    ["css/typography-fx.css", "css/typography-fx.css"],
+    ["css/homepage-upgrades.css", "css/homepage-upgrades.css"],
+    ["css/knight-upgrades.css", "css/knight-upgrades.css"],
+    ["css/fusco-reviews.css", "css/fusco-reviews.css"],
+    ["js/knight-upgrades.js", "js/knight-upgrades.js"],
+    ["js/fusco-reviews.js", "js/fusco-reviews.js"],
+    ["js/homepage-upgrades.js", "js/homepage-upgrades.js"],
+    ["js/cw-header.js", "js/cw-header.js"],
+  ];
   fs.mkdirSync(path.join(distDir, "css"), { recursive: true });
   fs.mkdirSync(path.join(distDir, "js"), { recursive: true });
-  if (fs.existsSync(publicCss)) {
-    fs.copyFileSync(publicCss, path.join(distDir, "css", "knight-upgrades.css"));
-  }
-  if (fs.existsSync(publicJs)) {
-    fs.copyFileSync(publicJs, path.join(distDir, "js", "knight-upgrades.js"));
+  for (const [src, dest] of assetPairs) {
+    const from = path.join(ROOT, "public", src);
+    if (fs.existsSync(from)) {
+      fs.copyFileSync(from, path.join(distDir, dest));
+    }
   }
 
   const files = walkHtml(distDir);

@@ -113,6 +113,7 @@
 
   function injectReviews() {
     if (document.querySelector(".cw-reviews")) return;
+    if (document.querySelector(".cw-google-trust-section, [data-review-carousel]")) return;
 
     var isHome =
       document.body.classList.contains("dm-home-page") ||
