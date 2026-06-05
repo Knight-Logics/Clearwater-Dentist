@@ -23,6 +23,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - name: Install rebuild dependencies
+        run: npm ci
+        working-directory: rebuild
+
       - name: Prepare static site for GitHub Pages
         run: node rebuild/scripts/fix-missing-assets.mjs rebuild/dist && node rebuild/scripts/apply-rebuild-fixes.mjs && node rebuild/scripts/prepare-pages.mjs
         env:
