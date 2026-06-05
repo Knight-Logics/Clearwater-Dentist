@@ -107,6 +107,8 @@ export function upgradeHomepage($) {
     primaryHero.find("> .dmRespColsWrapper").first().replaceWith(unifiedHeroHtml());
   }
 
+  patchDudaHeroInlineCss($);
+
   /* Move Google reviews directly under hero */
   const reviews = $("#1619377659").first();
   if (reviews.length && primaryHero.length) {
@@ -123,7 +125,8 @@ export function upgradeHomepage($) {
 
   demoteExtraH1($);
 
-  $("body").addClass("cw-home-v2");
+  $("body").removeClass("addCanvasBorder").addClass("cw-home-v2");
+  $("#dm-outer-wrapper").removeClass("rows-1200");
 }
 
 export function injectDesignFonts($) {
@@ -142,6 +145,38 @@ const DESIGN_CSS = [
   "/css/typography-fx.css",
 ];
 
+function patchDudaHeroInlineCss($) {
+  $("style").each((_, el) => {
+    let css = $(el).html() || "";
+    if (!css.includes("u_1300582767")) return;
+    css = css.replace(
+      /#dm\s+\.dmBody\s+div\.u_1300582767\s*\{[^}]*padding:\s*49px[^}]+\}/g,
+      "#dm .dmBody div.u_1300582767{padding-top:clamp(1rem,3vh,2.5rem)!important;padding-bottom:clamp(1rem,3vh,2rem)!important;padding-left:0!important;padding-right:0!important}"
+    );
+    css = css.replace(
+      /#dm\s+\.dmBody\s+div\.u_1300582767\s*\{[^}]*padding:49px[^}]+\}/g,
+      "#dm .dmBody div.u_1300582767{padding-top:clamp(1rem,3vh,2.5rem)!important;padding-bottom:clamp(1rem,3vh,2rem)!important;padding-left:0!important;padding-right:0!important}"
+    );
+    css = css.replace(
+      /width:\s*auto\s*!important/g,
+      "width:100%!important"
+    );
+    css = css.replace(
+      /(div\.u_1300582767[^}]*?)max-width:\s*100%\s*!important/g,
+      "$1max-width:none!important"
+    );
+    $(el).html(css);
+  });
+}
+
+export function injectLateFullBleed($, { homepage = false } = {}) {
+  if (!homepage) return;
+  if ($('link[href*="cw-fullbleed-overrides.css"]').length) return;
+  $("body").append(
+    '<link rel="stylesheet" href="/css/cw-fullbleed-overrides.css" data-cw-upgrade="late">'
+  );
+}
+
 export function injectDesignAssets($, { homepage = false } = {}) {
   injectDesignFonts($);
   const head = $("head");
@@ -157,6 +192,30 @@ export function injectDesignAssets($, { homepage = false } = {}) {
       '<link rel="stylesheet" href="/css/homepage-upgrades.css" data-cw-upgrade="1">'
     );
   }
+
+  if (homepage && !$("body").find("#cw-fullbleed-fix").length) {
+    $("body").append(`<style id="cw-fullbleed-fix">
+html.clearwater-replica { padding: 0 !important; margin: 0 !important; }
+body.cw-home-v2 #dm .dmBody div.u_1300582767,
+body.cw-home-v2 #1300582767.u_1300582767 {
+  width: 100% !important;
+  max-width: none !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+body.cw-home-v2 #1300582767 .videobgwrapper,
+body.cw-home-v2 #1300582767 .videobgframe {
+  width: 100% !important;
+  min-width: 100% !important;
+  left: 0 !important;
+  right: 0 !important;
+}
+</style>`);
+  }
+
+  injectLateFullBleed($, { homepage });
 
   if (homepage && !$('script[src*="homepage-upgrades.js"]').length) {
     $("body").append(

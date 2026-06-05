@@ -1,0 +1,91 @@
+/**
+ * Load last — overrides Duda font bundle `html { padding: 15px }` canvas gutter
+ * and late page CSS on hero row width/padding.
+ */
+
+html.clearwater-replica,
+html.ios-preview-native-scroll {
+  padding: 0 !important;
+  margin: 0 !important;
+  width: 100% !important;
+  max-width: none !important;
+  overflow-x: hidden !important;
+  box-sizing: border-box;
+}
+
+body.cw-home-v2#dmRoot {
+  overflow-x: hidden !important;
+}
+
+body.cw-home-v2#dmRoot,
+body.cw-home-v2 .cw-site-header,
+body.cw-home-v2 #dm,
+body.cw-home-v2 .dmwr,
+body.cw-home-v2 #dm-outer-wrapper,
+body.cw-home-v2 #dmStyle_outerContainer,
+body.cw-home-v2 #dmStyle_innerContainer,
+body.cw-home-v2 .dmOuter,
+body.cw-home-v2 .dmInner,
+body.cw-home-v2 #dmFirstContainer,
+body.cw-home-v2 .dmBody {
+  width: 100% !important;
+  max-width: none !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  box-sizing: border-box;
+}
+
+body.cw-home-v2 #dm .dmBody div.u_1300582767,
+body.cw-home-v2 #1300582767.u_1300582767,
+body.cw-home-v2 #1300582767 {
+  width: 100vw !important;
+  max-width: 100vw !important;
+  margin-left: calc(50% - 50vw) !important;
+  margin-right: calc(50% - 50vw) !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  padding-top: clamp(1rem, 3vh, 2.5rem) !important;
+  padding-bottom: clamp(1rem, 3vh, 2rem) !important;
+  float: none !important;
+  box-sizing: border-box;
+}
+
+body.cw-home-v2 .cw-google-trust-section {
+  width: 100vw !important;
+  max-width: 100vw !important;
+  margin-left: calc(50% - 50vw) !important;
+  margin-right: calc(50% - 50vw) !important;
+  padding-top: 28px !important;
+  padding-bottom: 28px !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  box-sizing: border-box;
+}
+
+body.cw-home-v2 #1300582767 .videobgwrapper,
+body.cw-home-v2 #1300582767 .videobgframe,
+body.cw-home-v2 #1300582767 video {
+  width: 100vw !important;
+  min-width: 100vw !important;
+  max-width: none !important;
+  left: 50% !important;
+  right: auto !important;
+  margin-left: -50vw !important;
+}
+
+body.cw-home-v2 #1300582767 .videobgframe {
+  object-fit: cover !important;
+  transform: scale(1.015);
+  transform-origin: center center;
+}
+
+body.cw-home-v2 #1619377659 .dmRespColsWrapper,
+body.cw-home-v2 .cw-google-trust-section .dmRespColsWrapper,
+body.cw-home-v2 .cw-google-trust-section .dmRespCol {
+  max-width: none !important;
+  width: 100% !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}

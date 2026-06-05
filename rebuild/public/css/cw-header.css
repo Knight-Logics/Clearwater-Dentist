@@ -25,12 +25,12 @@ body.cw-design-v2 .hamburger-header-container.showOnMedium {
   width: 100%;
   max-width: none;
   margin: 0;
-  padding: 0.35rem clamp(0.65rem, 2vw, 1.75rem);
-  min-height: clamp(100px, 22vw, 260px);
+  padding: 0.45rem clamp(0.75rem, 2vw, 1.75rem);
+  min-height: 0;
   display: grid;
   grid-template-columns: auto 1fr auto;
   align-items: center;
-  gap: clamp(0.5rem, 2vw, 2rem);
+  gap: clamp(0.5rem, 1.5vw, 1.5rem);
   box-sizing: border-box;
 }
 
@@ -45,9 +45,9 @@ body.cw-design-v2 .hamburger-header-container.showOnMedium {
 
 .cw-site-header__logo img {
   display: block;
-  height: clamp(140px, 18vw, 240px);
-  width: auto;
-  max-width: min(340px, 42vw);
+  height: clamp(88px, 9vw, 112px) !important;
+  width: auto !important;
+  max-width: min(320px, 36vw) !important;
   object-fit: contain;
   object-position: left center;
 }
@@ -106,8 +106,8 @@ body.cw-design-v2 .hamburger-header-container.showOnMedium {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   color: #0f3f55;
   text-decoration: none;
@@ -115,8 +115,8 @@ body.cw-design-v2 .hamburger-header-container.showOnMedium {
 }
 
 .cw-site-header__social-link svg {
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
   display: block;
 }
 
@@ -258,8 +258,8 @@ body.cw-home-v2 .stickyHeaderSpacer {
   }
 
   .cw-site-header__logo img {
-    height: clamp(88px, 24vw, 130px);
-    max-width: min(200px, 48vw);
+    height: clamp(72px, 18vw, 96px) !important;
+    max-width: min(220px, 52vw) !important;
   }
 
   .cw-site-header__social {

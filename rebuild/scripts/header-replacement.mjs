@@ -64,7 +64,7 @@ export function customHeaderHtml() {
   return `<header class="cw-site-header" id="cw-site-header" role="banner">
   <div class="cw-site-header__inner">
     <a class="cw-site-header__logo" href="/" aria-label="Clearwater Dentist home">
-      <img src="/cdn/irp/a227a250/dms3rep/multi/Clearwater-Dentist-Logo-466372.svg" alt="Clearwater Dentist" width="150" height="150">
+      <img src="/cdn/irp/a227a250/dms3rep/multi/Clearwater-Dentist-Logo-466372.svg" alt="Clearwater Dentist">
     </a>
     <nav class="cw-site-header__nav" aria-label="Primary navigation">
       <ul class="cw-site-header__nav-list">${navHtml()}</ul>

@@ -319,6 +319,7 @@ export function applyRebuildFixes(distDir = DIST) {
     ["css/cw-header.css", "css/cw-header.css"],
     ["css/typography-fx.css", "css/typography-fx.css"],
     ["css/homepage-upgrades.css", "css/homepage-upgrades.css"],
+    ["css/cw-fullbleed-overrides.css", "css/cw-fullbleed-overrides.css"],
     ["css/knight-upgrades.css", "css/knight-upgrades.css"],
     ["css/fusco-reviews.css", "css/fusco-reviews.css"],
     ["js/knight-upgrades.js", "js/knight-upgrades.js"],

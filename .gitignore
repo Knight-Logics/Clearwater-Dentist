@@ -9,6 +9,7 @@ rebuild/public/
 !rebuild/public/css/homepage-upgrades.css
 !rebuild/public/css/cw-header.css
 !rebuild/public/css/typography-fx.css
+!rebuild/public/css/cw-fullbleed-overrides.css
 !rebuild/public/css/header-bar.css
 !rebuild/public/js/knight-upgrades.js
 !rebuild/public/js/fusco-reviews.js

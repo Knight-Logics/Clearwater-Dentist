@@ -47,6 +47,8 @@ const shots = [
   { name: 'qa-header.png', width: 1440, height: 900, clip: { x: 0, y: 0, width: 1440, height: 100 } },
   { name: 'qa-hero.png', width: 1440, height: 900, clip: { x: 0, y: 0, width: 1440, height: 620 } },
   { name: 'qa-hero-panels.png', width: 1440, height: 900, clip: { x: 0, y: 380, width: 1440, height: 420 } },
+  { name: 'qa-reviews-section.png', width: 1440, height: 900, clip: { x: 0, y: 700, width: 1440, height: 650 } },
+  { name: 'qa-edge-left.png', width: 1440, height: 900, clip: { x: 0, y: 200, width: 6, height: 500 } },
   { name: 'qa-home-full.png', width: 1440, height: 900, fullPage: true },
 ];
 const browser = await chromium.launch();
@@ -54,6 +56,14 @@ for (const s of shots) {
   const page = await browser.newPage({ viewport: { width: s.width, height: s.height } });
   await page.goto('${BASE}/', { waitUntil: 'networkidle' });
   await page.waitForTimeout(3000);
+  if (s.name === 'qa-reviews-section.png') {
+    await page.locator('[id="1619377659"]').scrollIntoViewIfNeeded();
+    await page.waitForTimeout(500);
+    const box = await page.locator('[id="1619377659"]').boundingBox();
+    if (box) {
+      s.clip = { x: 0, y: Math.max(0, Math.floor(box.y - 20)), width: 1440, height: Math.min(650, Math.floor(box.height + 40)) };
+    }
+  }
   await page.screenshot({ path: path.join(OUT, s.name), clip: s.clip, fullPage: !!s.fullPage });
   await page.close();
   console.log('  ✓', s.name);

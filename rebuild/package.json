@@ -13,7 +13,8 @@
     "pages:deploy": "node scripts/fix-missing-assets.mjs && node scripts/apply-rebuild-fixes.mjs && node scripts/prepare-pages.mjs",
     "serve": "npx --yes serve dist -l 3457",
     "screenshot": "node scripts/screenshot-compare.mjs",
-    "screenshot:qa": "node scripts/capture-screenshots.mjs"
+    "screenshot:qa": "node scripts/capture-screenshots.mjs",
+    "verify:fullbleed": "node scripts/verify-fullbleed.mjs"
   },
   "dependencies": {
     "cheerio": "^1.0.0"
