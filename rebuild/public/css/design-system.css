@@ -12,6 +12,8 @@
   --cw-border: #d8e3e8;
   --cw-radius: 10px;
   --cw-radius-lg: 16px;
+  --cw-content-max: 2100px;
+  --cw-trust-max: 2100px;
   --cw-font-body: "Be Vietnam", system-ui, sans-serif;
   --cw-font-display: "Epilogue", "Be Vietnam", system-ui, sans-serif;
   --cw-shadow: 0 8px 24px rgba(15, 63, 85, 0.1);

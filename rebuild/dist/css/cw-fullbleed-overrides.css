@@ -84,8 +84,19 @@ body.cw-home-v2 #1300582767 .videobgframe {
 body.cw-home-v2 #1619377659 .dmRespColsWrapper,
 body.cw-home-v2 .cw-google-trust-section .dmRespColsWrapper,
 body.cw-home-v2 .cw-google-trust-section .dmRespCol {
-  max-width: none !important;
+  max-width: min(var(--cw-trust-max, 2100px), 98vw) !important;
   width: 100% !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: clamp(0.75rem, 2vw, 1.5rem) !important;
+  padding-right: clamp(0.75rem, 2vw, 1.5rem) !important;
+  box-sizing: border-box !important;
+}
+
+body.cw-home-v2 .cw-google-trust {
+  max-width: 100% !important;
+  width: 100% !important;
+  margin: 0 auto !important;
   padding-left: 0 !important;
   padding-right: 0 !important;
 }

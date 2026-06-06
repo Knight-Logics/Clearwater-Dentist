@@ -15,17 +15,20 @@
 
 .cw-google-trust-section .dmRespColsWrapper,
 .cw-google-trust-section .dmRespCol {
-  max-width: none !important;
+  max-width: min(var(--cw-trust-max, 2100px), 98vw) !important;
   width: 100% !important;
-  padding-left: 0 !important;
-  padding-right: 0 !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: clamp(0.75rem, 2vw, 1.5rem) !important;
+  padding-right: clamp(0.75rem, 2vw, 1.5rem) !important;
+  box-sizing: border-box;
 }
 
 .cw-google-trust {
-  max-width: min(1320px, 96vw);
+  max-width: 100% !important;
   width: 100%;
   margin: 0 auto;
-  padding: 0 clamp(0.75rem, 2vw, 1.5rem);
+  padding: 0;
   box-sizing: border-box;
   font-family: var(--cw-font-body, "Be Vietnam", system-ui, sans-serif);
   color: var(--cw-text, #1a2b33);
@@ -278,6 +281,7 @@
   width: 100%;
   max-width: 100%;
   min-width: 0;
+  height: 100%;
   background: white;
   border-radius: 16px;
   padding: 10px;
@@ -286,15 +290,110 @@
   box-sizing: border-box;
 }
 
-.cw-google-trust .map-card iframe {
-  width: 100%;
-  height: 260px;
+.cw-google-trust .map-frame-wrap {
+  position: relative;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
   min-height: 260px;
-  border: 0;
   border-radius: 12px;
+  overflow: hidden;
 }
 
+.cw-google-trust .map-place-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  max-width: calc(100% - 20px);
+  padding: 8px 10px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(15, 63, 85, 0.1);
+  box-shadow: 0 6px 18px rgba(15, 63, 85, 0.12);
+  color: #0f3f55;
+  text-decoration: none;
+  font-size: 0.78rem;
+  line-height: 1.25;
+}
+
+.cw-google-trust .map-place-badge__name {
+  font-size: 0.86rem;
+  font-weight: 800;
+}
+
+.cw-google-trust .map-place-badge__score {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  color: #4a5c66;
+  font-weight: 600;
+}
+
+.cw-google-trust .map-place-badge__stars {
+  color: #f5a623;
+  letter-spacing: 0.08em;
+}
+
+.cw-google-trust .map-place-badge:hover {
+  background: #fff;
+  box-shadow: 0 8px 22px rgba(15, 63, 85, 0.16);
+}
+
+.cw-google-trust .cw-trust-map-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(360px, 42%);
+  gap: 16px;
+  align-items: stretch;
+  width: 100%;
+}
+
+.cw-google-trust .map-card,
+.cw-google-trust .cw-trust-office-photo {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+}
+
+.cw-google-trust .cw-trust-office-photo {
+  margin: 0;
+  overflow: hidden;
+  border-radius: 16px;
+  border: 1px solid rgba(15, 63, 85, 0.08);
+  box-shadow: 0 8px 22px rgba(15, 63, 85, 0.06);
+  background: #eef2f4;
+  padding: 10px;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+.cw-google-trust .cw-trust-office-photo img {
+  display: block;
+  flex: 1 1 auto;
+  width: 100%;
+  min-height: 0;
+  height: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  object-position: center 42%;
+}
+
+.cw-google-trust .map-card iframe {
+  flex: 1 1 auto;
+  width: 100%;
+  height: 100% !important;
+  min-height: 260px;
+  border: 0;
+  border-radius: 0;
+}
+
+.cw-google-trust .map-card__address,
 .cw-google-trust .map-card p {
+  flex: 0 0 auto;
   margin: 8px 2px 0;
   line-height: 1.45;
   color: #4a5c66;
@@ -326,8 +425,20 @@
     max-width: 100%;
   }
 
+  .cw-google-trust .map-frame-wrap {
+    min-height: 220px;
+  }
+
   .cw-google-trust .map-card iframe {
-    height: 220px;
+    min-height: 220px;
+  }
+
+  .cw-google-trust .cw-trust-map-row {
+    grid-template-columns: 1fr;
+  }
+
+  .cw-google-trust .cw-trust-office-photo {
+    width: 100%;
     min-height: 220px;
   }
 }

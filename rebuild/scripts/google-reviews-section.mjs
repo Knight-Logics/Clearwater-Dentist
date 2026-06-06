@@ -6,6 +6,12 @@ const ROOT = path.join(path.dirname(fileURLToPath(import.meta.url)), "..");
 const DATA = JSON.parse(
   fs.readFileSync(path.join(ROOT, "data", "google-reviews.json"), "utf8")
 );
+const SITE = JSON.parse(
+  fs.readFileSync(path.join(ROOT, "data", "site-config.json"), "utf8")
+);
+const OFFICE_PHOTO =
+  SITE.officePhotoSrc ||
+  "/cdn/lirp/a227a250/dms3rep/multi/opt/clearwater-dentist-clearwater-fl-front-of-dental-office-1920w.jpg";
 
 const AVATAR_COLORS = [
   "review-avatar--blue",
@@ -85,9 +91,23 @@ export function buildGoogleReviewsSectionHtml(config = DATA) {
               <a class="review-carousel-link" href="${config.googleUrl}" target="_blank" rel="noopener noreferrer">See all reviews on Google</a>
             </div>
           </div>
-          <div class="map-card">
-            <iframe src="${config.mapEmbed}" width="600" height="260" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Clearwater Dentist on Google Maps"></iframe>
-            <p>1700 N McMullen Booth Rd, Ste A1 · Clearwater, FL 33759</p>
+          <div class="cw-trust-map-row" data-cw-map-row>
+            <div class="map-card">
+              <div class="map-frame-wrap">
+                <iframe src="${config.mapEmbed}" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Clearwater Dentist on Google Maps"></iframe>
+                <a class="map-place-badge" href="${config.googleUrl}" target="_blank" rel="noopener noreferrer" aria-label="Clearwater Dentist ${rating} stars, ${count} Google reviews">
+                  <strong class="map-place-badge__name">Clearwater Dentist</strong>
+                  <span class="map-place-badge__score">
+                    <span class="map-place-badge__stars" aria-hidden="true">★★★★★</span>
+                    <span>${rating} · ${count} reviews</span>
+                  </span>
+                </a>
+              </div>
+              <p class="map-card__address">1700 N McMullen Booth Rd, Ste A1 · Clearwater, FL 33759</p>
+            </div>
+            <figure class="cw-trust-office-photo" data-cw-map-photo aria-hidden="false">
+              <img src="${OFFICE_PHOTO}" alt="Clearwater Dentist office exterior at 1700 N McMullen Booth Rd" width="640" height="480" loading="lazy" decoding="async">
+            </figure>
           </div>
         </div>
       </section>

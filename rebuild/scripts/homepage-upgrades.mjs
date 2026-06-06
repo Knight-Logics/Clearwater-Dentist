@@ -82,6 +82,103 @@ function unifiedHeroHtml() {
 </div>`;
 }
 
+function fixWhyCareHeadings($, section) {
+  section.find("#1990486408").remove();
+
+  const textHeading = section.find("#1098745619, #1407409540").first();
+  if (!textHeading.length) return;
+
+  textHeading.find("span").each((_, span) => {
+    const $span = $(span);
+    const text = $span.text().replace(/\s+/g, " ").trim();
+    if (text === "With an Artistic Touch" || text === "Why Come to Clearwater Dentist?") {
+      $span.text("Why Come to Clearwater Dentist?");
+      $span.attr("style", "display: initial; color: var(--color_10);");
+      $span.addClass("m-font-size-34 font-size-42");
+    }
+  });
+}
+
+function reorganizeHomepageLayout($) {
+  const existingSection = $(".cw-why-care-section#AboutUs").first();
+  const headingRow = $("#1785342196");
+  const videoRow = $("#1653077566");
+
+  if (existingSection.length && !headingRow.length && !videoRow.length) {
+    fixWhyCareHeadings($, existingSection);
+    return;
+  }
+
+  const aboutSection = $("div.u_AboutUs#AboutUs").not(".cw-why-care-section").first();
+  const desktopAboutRow = $("#1744574570");
+
+  let textHeadingEl = desktopAboutRow.find("#1098745619").first();
+  let textBodyEl = desktopAboutRow.find("#1615093046").first();
+  if (!textHeadingEl.length) {
+    textHeadingEl = aboutSection.find("#1098745619, #1407409540").first();
+  }
+  if (!textBodyEl.length) {
+    textBodyEl = aboutSection.find("#1615093046").first();
+  }
+
+  if (!headingRow.length && !videoRow.length) return;
+
+  const whyHeadingText =
+    headingRow.find("#1990486408").text().replace(/\s+/g, " ").trim() ||
+    "Why Come to Clearwater Dentist?";
+
+  const section = $(
+    '<div class="dmRespRow cw-why-care-section u_AboutUs" id="AboutUs" data-anchor="About Us"></div>'
+  );
+  const colsWrapper = $('<div class="dmRespColsWrapper cw-why-care-wrapper"></div>');
+  const fullCol = $('<div class="dmRespCol small-12 medium-12 large-12"></div>');
+  const grid = $('<div class="cw-why-care-grid"></div>');
+
+  const videoCol = $('<div class="cw-why-care-video"></div>');
+
+  const videoContent = videoRow.find("#1538174920").first();
+  if (videoContent.length) {
+    videoRow.find(".empty-column").remove();
+    videoContent
+      .removeClass("large-8 medium-8")
+      .addClass("cw-why-care-video-inner large-12 medium-12");
+    videoCol.append(videoContent);
+  }
+
+  const textCol = $('<div class="cw-why-care-text"></div>');
+  if (textHeadingEl.length) {
+    textHeadingEl.find("span").each((_, span) => {
+      const $span = $(span);
+      if ($span.text().replace(/\s+/g, " ").trim() === "With an Artistic Touch") {
+        $span.text(whyHeadingText);
+        $span.attr("style", "display: initial; color: var(--color_10);");
+      }
+    });
+    textCol.append(textHeadingEl);
+  }
+  if (textBodyEl.length) {
+    textBodyEl.find(".ql-cursor").remove();
+    textCol.append(textBodyEl);
+  }
+
+  grid.append(videoCol);
+  grid.append(textCol);
+  fullCol.append(grid);
+  colsWrapper.append(fullCol);
+  section.append(colsWrapper);
+
+  if (headingRow.length) {
+    headingRow.replaceWith(section);
+  } else if (videoRow.length) {
+    videoRow.replaceWith(section);
+  }
+
+  videoRow.remove();
+  aboutSection.remove();
+
+  fixWhyCareHeadings($, section);
+}
+
 function demoteExtraH1($) {
   $("h1").each((_, el) => {
     const $h = $(el);
@@ -116,6 +213,8 @@ export function upgradeHomepage($) {
     reviews.remove();
     primaryHero.after(moved);
   }
+
+  reorganizeHomepageLayout($);
 
   /* Header + footer social — full icon set */
   $(".dmSocialHub .socialHubInnerDiv, .u_1467801161 .socialHubInnerDiv").each((_, el) => {

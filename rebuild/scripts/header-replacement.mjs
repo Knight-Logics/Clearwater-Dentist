@@ -59,6 +59,45 @@ function socialHtml() {
   ).join("");
 }
 
+function mobileSocialHtml() {
+  return SOCIAL_LINKS.map(
+    (s) =>
+      `<a href="${s.href}" class="cw-mobile-nav__social-link" target="_blank" rel="noopener noreferrer" aria-label="${s.label}">${s.svg}</a>`
+  ).join("");
+}
+
+function mobileNavHtml() {
+  const links = NAV_LINKS.map(
+    (l) =>
+      `<li><a href="${l.href}" class="cw-mobile-nav__link">${l.label}</a></li>`
+  ).join("");
+  const year = new Date().getFullYear();
+  return `<div class="cw-mobile-nav" id="cw-mobile-nav" aria-hidden="true">
+  <div class="cw-mobile-nav__overlay" data-cw-nav-close tabindex="-1"></div>
+  <div class="cw-mobile-nav__panel" role="dialog" aria-modal="true" aria-label="Site menu">
+    <div class="cw-mobile-nav__head">
+      <div class="cw-mobile-nav__brand">
+        <img class="cw-mobile-nav__logo" src="/cdn/irp/a227a250/dms3rep/multi/Clearwater-Dentist-Logo-466372.svg" alt="Clearwater Dentist">
+        <strong class="cw-mobile-nav__title">Menu</strong>
+      </div>
+      <button type="button" class="cw-mobile-nav__close" data-cw-nav-close aria-label="Close menu">&times;</button>
+    </div>
+    <nav class="cw-mobile-nav__nav" aria-label="Mobile navigation">
+      <ul class="cw-mobile-nav__list">${links}</ul>
+    </nav>
+    <div class="cw-mobile-nav__footer">
+      <div class="cw-mobile-nav__actions">
+        <a class="cw-mobile-nav__book" href="${CONFIG.bookingUrl}" target="_blank" rel="noopener noreferrer">Book Online</a>
+        <a class="cw-mobile-nav__call" href="tel:${CONFIG.phoneTel}">Call Now · ${CONFIG.phoneDisplay}</a>
+      </div>
+      <div class="cw-mobile-nav__social" aria-label="Social media">${mobileSocialHtml()}</div>
+      <hr class="cw-mobile-nav__divider" aria-hidden="true">
+      <p class="cw-mobile-nav__copyright">&copy; ${year} Clearwater Dentist. All Rights Reserved.</p>
+    </div>
+  </div>
+</div>`;
+}
+
 export function customHeaderHtml() {
   const phoneIcon = `<svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M6.6 10.8c1.5 2.9 3.7 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.5.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.3 21 3 13.7 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.2.2 2.4.6 3.5.1.3 0 .7-.2 1L6.6 10.8z"/></svg>`;
   return `<header class="cw-site-header" id="cw-site-header" role="banner">
@@ -76,21 +115,23 @@ export function customHeaderHtml() {
         <a class="cw-site-header__call" href="tel:${CONFIG.phoneTel}">
           <span class="cw-site-header__call-icon">${phoneIcon}</span>
           <span class="cw-site-header__call-text">
-            <span class="cw-site-header__call-label">Call or Text</span>
+            <span class="cw-site-header__call-label">Call Now</span>
             <span class="cw-site-header__call-number">${CONFIG.phoneDisplay}</span>
           </span>
         </a>
       </div>
-      <button type="button" class="cw-site-header__menu" id="cw-site-header-menu" aria-label="Open menu" aria-controls="hamburger-drawer">
+      <button type="button" class="cw-site-header__menu" id="cw-site-header-menu" aria-label="Open menu" aria-controls="cw-mobile-nav" aria-expanded="false">
         <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M4 6h16v2H4V6zm0 5h16v2H4v-2zm0 5h16v2H4v-2z"/></svg>
       </button>
     </div>
   </div>
-</header>`;
+</header>${mobileNavHtml()}`;
 }
 
 export function injectCustomHeader($) {
   $("#cw-site-header").remove();
+  $("#cw-mobile-nav").remove();
+  $("#layout-drawer-hamburger, #hamburger-drawer").remove();
   $("body").prepend(customHeaderHtml());
 
   if (!$('script[src*="cw-header.js"]').length) {
