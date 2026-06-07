@@ -1,0 +1,544 @@
+/* About-section gallery heroes — meet-the-team, anti-anxiety, therapy dogs */
+
+@keyframes cwAboutHeroTitleAura {
+  0%,
+  58%,
+  82%,
+  100% {
+    filter: drop-shadow(0 2px 14px rgba(0, 0, 0, 0.45))
+      drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+  }
+  70% {
+    filter: drop-shadow(0 2px 14px rgba(0, 0, 0, 0.45))
+      drop-shadow(0 0 26px rgba(255, 255, 255, 0.95))
+      drop-shadow(0 0 44px rgba(255, 255, 255, 0.45));
+  }
+}
+
+body.cw-design-v2.cw-about-hero-v2,
+body.cw-design-v2.cw-about-hero-v2#dmRoot {
+  padding-top: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  margin: 0 !important;
+  overflow-x: hidden;
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+html:has(body.cw-about-hero-v2) {
+  overflow-x: clip;
+}
+
+body.cw-about-hero-v2 .cw-site-header {
+  background: rgba(255, 255, 255, 0.9) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+body.cw-about-hero-v2 #site_content,
+body.cw-about-hero-v2 #dmFirstContainer,
+body.cw-about-hero-v2 #allWrapper,
+body.cw-about-hero-v2 #dm_content,
+body.cw-about-hero-v2 [id="1716942098"],
+body.cw-about-hero-v2 .dmHomeRespTmpl,
+body.cw-about-hero-v2 #dm,
+body.cw-about-hero-v2 .dm_wrapper,
+body.cw-about-hero-v2 [id="1901957768"],
+body.cw-about-hero-v2 #dm-outer-wrapper,
+body.cw-about-hero-v2 #dmStyle_outerContainer,
+body.cw-about-hero-v2 #dmStyle_innerContainer,
+body.cw-about-hero-v2 .dmLayoutWrapper,
+body.cw-about-hero-v2 .dmOuter,
+body.cw-about-hero-v2 .dmInner,
+body.cw-about-hero-v2 .dmPageBody {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  min-height: 0 !important;
+}
+
+body.cw-about-hero-v2 #site_content > .p_hfcontainer,
+body.cw-about-hero-v2 #site_content .site_content > *:not(#dmFirstContainer),
+body.cw-about-hero-v2 #hamburger-header-container,
+body.cw-about-hero-v2 .dmHeaderContainer,
+body.cw-about-hero-v2 #hcontainer,
+body.cw-about-hero-v2 .stickyHeaderSpacer,
+body.cw-about-hero-v2 #stickyHeaderSpacer {
+  display: none !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+}
+
+body.cw-about-hero-v2 [id="1716942098"] {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+body.cw-about-hero-v2 .cw-about-page-hero.cw-page-hero-gallery {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  margin-top: var(--cw-header-offset, 116px) !important;
+  margin-bottom: 0 !important;
+  /* Override base gallery padding that adds a second header offset */
+  padding: clamp(0.55rem, 1.4vh, 0.95rem) clamp(0.5rem, 2vw, 1rem) !important;
+  box-sizing: border-box !important;
+}
+
+body.cw-about-hero-v2 .cw-about-page-hero .cw-about-hero__content {
+  width: 100% !important;
+  max-width: 100% !important;
+  padding-left: clamp(0.75rem, 2.5vw, 1.5rem);
+  padding-right: clamp(0.75rem, 2.5vw, 1.5rem);
+  box-sizing: border-box;
+}
+
+body.cw-about-hero-v2 .cw-about-page-hero ~ #dm,
+body.cw-about-hero-v2 .cw-about-page-hero ~ #dmFirstContainer,
+body.cw-about-hero-v2--anti-anxiety #cw-anti-anxiety-page-hero ~ #dm {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+body.cw-about-hero-v2--anti-anxiety #cw-anti-anxiety-page-hero {
+  margin-bottom: 0 !important;
+}
+
+.cw-about-page-hero.cw-page-hero-gallery {
+  --cw-page-hero-min-h: clamp(320px, 42vh, 460px);
+  --cw-page-hero-min-h-mobile: clamp(240px, 54vw, 340px);
+}
+
+.cw-about-page-hero.cw-about-hero-v2--anti-anxiety.cw-page-hero-gallery {
+  --cw-page-hero-min-h: clamp(240px, 32vh, 360px);
+  --cw-page-hero-min-h-mobile: clamp(185px, 50vw, 255px);
+}
+
+.cw-about-page-hero .cw-about-hero__bg--grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3px;
+  background: #0f3f55;
+}
+
+.cw-about-page-hero .cw-about-hero__bg--mobile {
+  display: none;
+}
+
+.cw-about-page-hero .cw-about-hero__panel {
+  position: relative;
+  overflow: hidden;
+  min-height: 100%;
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+.cw-about-page-hero .cw-about-hero__panel img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  transform-origin: center top;
+  transform: scale(1.04);
+  transition: transform 8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.cw-about-page-hero.cw-page-hero-gallery--ready .cw-about-hero__panel img {
+  transform: scale(1);
+}
+
+.cw-about-page-hero .cw-about-hero__panel--left {
+  transform: translateX(-105%);
+  animation: cwPageHeroPanelFromLeft 0.95s cubic-bezier(0.22, 1, 0.36, 1) 0.08s forwards;
+}
+
+.cw-about-page-hero .cw-about-hero__panel--bottom {
+  transform: translateY(105%);
+  animation: cwPageHeroPanelFromBottom 0.95s cubic-bezier(0.22, 1, 0.36, 1) 0.2s forwards;
+}
+
+.cw-about-page-hero .cw-about-hero__panel--top {
+  transform: translateY(-105%);
+  animation: cwPageHeroPanelFromTop 0.95s cubic-bezier(0.22, 1, 0.36, 1) 0.32s forwards;
+}
+
+.cw-about-page-hero .cw-about-hero__panel--right {
+  transform: translateX(105%);
+  animation: cwPageHeroPanelFromRight 0.95s cubic-bezier(0.22, 1, 0.36, 1) 0.44s forwards;
+}
+
+.cw-about-page-hero .cw-about-hero__overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: linear-gradient(
+    180deg,
+    rgba(15, 63, 85, 0.22) 0%,
+    rgba(15, 63, 85, 0.46) 55%,
+    rgba(15, 63, 85, 0.58) 100%
+  );
+}
+
+.cw-about-page-hero .cw-about-hero__content {
+  position: relative;
+  z-index: 2;
+}
+
+.cw-about-page-hero h1.cw-about-hero__title {
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1.08 !important;
+  text-align: center !important;
+  width: 100% !important;
+  max-width: 100% !important;
+}
+
+#dm div.dmInner #site_content h1.cw-about-hero__title,
+.cw-about-page-hero h1.cw-about-hero-glimmer {
+  display: inline-block !important;
+  max-width: none !important;
+  white-space: nowrap !important;
+  font-weight: 400 !important;
+  font-size: var(--cw-about-title-size, clamp(1.25rem, 4.2vw, 3.5rem)) !important;
+  line-height: 1.08 !important;
+  letter-spacing: -0.015em;
+  font-family: var(--cw-font-display, "Epilogue", sans-serif) !important;
+  color: #ffffff !important;
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.45);
+  vertical-align: top;
+}
+
+.cw-about-page-hero h1.cw-about-hero__title--wrap {
+  display: block !important;
+  white-space: normal !important;
+  text-wrap: balance;
+  max-width: min(100%, 16em) !important;
+  margin-inline: auto !important;
+  font-size: var(
+    --cw-about-title-size,
+    clamp(1.15rem, 4.2vw + 0.35rem, 2.55rem)
+  ) !important;
+  line-height: 1.12 !important;
+}
+
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+  .cw-about-page-hero h1.cw-about-hero-glimmer {
+    background-image: linear-gradient(
+      112deg,
+      #ffffff 0%,
+      #ffffff 24%,
+      #ffffff 37%,
+      #e8d4a8 50%,
+      #ffffff 63%,
+      #f5ecd8 78%,
+      #ffffff 100%
+    ) !important;
+    background-size: 280% auto !important;
+    background-position: 0% 50% !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    color: transparent !important;
+    animation:
+      cwHeroGlimmerSweepLTR 12.5s ease-in-out infinite,
+      cwAboutHeroTitleAura 12.5s ease-in-out infinite !important;
+  }
+}
+
+.cw-about-page-hero .cw-about-hero__subtitle {
+  margin: 0.4rem auto 0 !important;
+  max-width: min(40rem, 92%);
+  padding: 0 0.35rem;
+  color: rgba(255, 255, 255, 0.94) !important;
+  font-size: var(
+    --cw-about-subtitle-size,
+    clamp(0.78rem, 0.55vw + 0.68rem, 1.02rem)
+  ) !important;
+  line-height: 1.38 !important;
+  text-align: center !important;
+  text-wrap: balance;
+  text-shadow: 0 1px 16px rgba(0, 0, 0, 0.45);
+}
+
+.cw-about-page-hero .cw-about-hero__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0.85rem auto 0;
+  padding: 0.72rem 1.35rem;
+  min-height: 2.75rem;
+  border-radius: 999px;
+  border: 2px solid rgba(255, 255, 255, 0.88);
+  background: rgba(192, 122, 46, 0.92);
+  color: #fff !important;
+  font-size: clamp(0.72rem, 0.22vw + 0.66rem, 0.88rem);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-decoration: none !important;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.22);
+  transition:
+    background 0.18s ease,
+    transform 0.18s ease,
+    border-color 0.18s ease;
+}
+
+.cw-about-page-hero .cw-about-hero__cta:hover,
+.cw-about-page-hero .cw-about-hero__cta:focus-visible {
+  background: #a86824;
+  border-color: #fff;
+  transform: translateY(-1px);
+  outline: none;
+}
+
+/* Meet the team — 4 → 3 → 2 panels as viewport narrows */
+@media (max-width: 1100px) {
+  .cw-about-page-hero.cw-about-hero-v2--meet-team .cw-about-hero__bg--desktop {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .cw-about-page-hero.cw-about-hero-v2--meet-team
+    .cw-about-hero__bg--desktop
+    .cw-about-hero__panel--right {
+    display: none;
+  }
+}
+
+@media (max-width: 900px) {
+  .cw-about-page-hero.cw-about-hero-v2--meet-team .cw-about-hero__bg--desktop {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .cw-about-page-hero.cw-about-hero-v2--meet-team
+    .cw-about-hero__bg--desktop
+    .cw-about-hero__panel--top {
+    display: none;
+  }
+}
+
+@media (max-width: 767px) {
+  body.cw-about-hero-v2 .cw-about-page-hero.cw-page-hero-gallery {
+    padding: 0.5rem 0.45rem !important;
+  }
+
+  .cw-about-page-hero .cw-about-hero__bg--desktop {
+    display: none;
+  }
+
+  .cw-about-page-hero .cw-about-hero__bg--mobile {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2px;
+  }
+
+  .cw-about-page-hero .cw-about-hero__bg--mobile .cw-about-hero__panel--bottom {
+    grid-column: 2;
+    grid-row: 1;
+    transform: translateX(105%);
+    animation: cwPageHeroPanelFromRight 0.95s cubic-bezier(0.22, 1, 0.36, 1) 0.2s forwards;
+  }
+
+  .cw-about-page-hero.cw-about-hero-v2--anti-anxiety h1.cw-about-hero__title--wrap {
+    max-width: min(100%, 14em) !important;
+    font-size: var(
+      --cw-about-title-size,
+      clamp(1.05rem, 5.8vw + 0.2rem, 1.75rem)
+    ) !important;
+    line-height: 1.14 !important;
+  }
+
+  .cw-about-page-hero.cw-about-hero-v2--anti-anxiety .cw-about-hero__subtitle {
+    margin-top: 0.3rem !important;
+    font-size: var(
+      --cw-about-subtitle-size,
+      clamp(0.72rem, 3.1vw + 0.42rem, 0.9rem)
+    ) !important;
+    line-height: 1.35 !important;
+    max-width: 26rem;
+  }
+
+  .cw-about-page-hero.cw-about-hero-v2--anti-anxiety .cw-about-hero__cta {
+    width: min(100%, 19.5rem);
+    margin-top: 0.65rem;
+    padding: 0.62rem 0.9rem;
+    min-height: 2.5rem;
+    font-size: clamp(0.58rem, 2.6vw + 0.28rem, 0.76rem) !important;
+    letter-spacing: 0.055em;
+    line-height: 1.25;
+    text-align: center;
+    white-space: normal;
+    text-wrap: balance;
+  }
+
+  .cw-about-page-hero.cw-about-hero-v2--anti-anxiety .cw-about-hero__content {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+}
+
+@media (max-width: 390px) {
+  .cw-about-page-hero.cw-about-hero-v2--anti-anxiety.cw-page-hero-gallery {
+    --cw-page-hero-min-h-mobile: clamp(176px, 50vw, 230px);
+  }
+}
+
+/* ── Anti-anxiety page body: tighter rhythm + mobile-readable copy ── */
+body.cw-about-hero-v2--anti-anxiety #dmFirstContainer,
+body.cw-about-hero-v2--anti-anxiety #dm_content,
+body.cw-about-hero-v2--anti-anxiety #allWrapper,
+body.cw-about-hero-v2--anti-anxiety .cw-ax-content {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+body.cw-about-hero-v2--anti-anxiety .cw-ax-content > .dmRespRow {
+  margin-top: 0.45rem !important;
+  margin-bottom: 0.45rem !important;
+  padding-top: 0.2rem !important;
+  padding-bottom: 0.2rem !important;
+}
+
+body.cw-about-hero-v2--anti-anxiety [id="1246193055"] {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+body.cw-about-hero-v2--anti-anxiety .cw-ax-content h3 {
+  margin: 0.35rem 0 0.25rem !important;
+  line-height: 1.2 !important;
+}
+
+body.cw-about-hero-v2--anti-anxiety .cw-ax-content p,
+body.cw-about-hero-v2--anti-anxiety .cw-ax-content li {
+  line-height: 1.55 !important;
+}
+
+@media (max-width: 767px) {
+  html:has(body.cw-about-hero-v2--anti-anxiety) {
+    overflow-x: clip;
+  }
+
+  body.cw-about-hero-v2--anti-anxiety #dm,
+  body.cw-about-hero-v2--anti-anxiety #dm-outer-wrapper,
+  body.cw-about-hero-v2--anti-anxiety #dmFirstContainer,
+  body.cw-about-hero-v2--anti-anxiety .cw-ax-content {
+    max-width: 100% !important;
+    overflow-x: clip;
+  }
+
+  body.cw-about-hero-v2--anti-anxiety .cw-ax-content .dmRespColsWrapper {
+    display: flex !important;
+    flex-direction: column !important;
+    flex-wrap: nowrap !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 0.85rem !important;
+    padding-right: 0.85rem !important;
+    box-sizing: border-box !important;
+  }
+
+  body.cw-about-hero-v2--anti-anxiety .cw-ax-content .dmRespCol {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 auto !important;
+    float: none !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  body.cw-about-hero-v2--anti-anxiety .cw-ax-content p,
+  body.cw-about-hero-v2--anti-anxiety .cw-ax-content li,
+  body.cw-about-hero-v2--anti-anxiety .cw-ax-content li span,
+  body.cw-about-hero-v2--anti-anxiety .cw-ax-content p span,
+  body.cw-about-hero-v2--anti-anxiety .cw-ax-content a {
+    font-size: clamp(0.84rem, 3.5vw, 0.98rem) !important;
+    line-height: 1.5 !important;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  body.cw-about-hero-v2--anti-anxiety .cw-ax-content h3,
+  body.cw-about-hero-v2--anti-anxiety .cw-ax-content h3 span {
+    font-size: clamp(1.05rem, 4.8vw, 1.35rem) !important;
+    line-height: 1.22 !important;
+    text-align: center !important;
+  }
+
+  body.cw-about-hero-v2--anti-anxiety .cw-ax-content .size-24,
+  body.cw-about-hero-v2--anti-anxiety .cw-ax-content .font-size-24,
+  body.cw-about-hero-v2--anti-anxiety .cw-ax-content .m-font-size-19,
+  body.cw-about-hero-v2--anti-anxiety .cw-ax-content .m-size-19 {
+    font-size: inherit !important;
+    line-height: inherit !important;
+  }
+
+  body.cw-about-hero-v2--anti-anxiety .cw-ax-content .imageWidget,
+  body.cw-about-hero-v2--anti-anxiety .cw-ax-content .imageWidget img {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    margin: 0.35rem auto 0 !important;
+  }
+
+  body.cw-about-hero-v2--anti-anxiety .cw-ax-content > .dmRespRow {
+    margin-top: 0 !important;
+    margin-bottom: 0.35rem !important;
+    padding-top: 0 !important;
+  }
+
+  body.cw-about-hero-v2--anti-anxiety .cw-ax-content > .dmRespRow:first-child {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  .cw-about-page-hero.cw-about-hero-v2--anti-anxiety h1.cw-about-hero__title--wrap {
+    max-width: min(100%, 12.5em) !important;
+    font-size: var(
+      --cw-about-title-size,
+      clamp(0.98rem, 5.2vw + 0.15rem, 1.55rem)
+    ) !important;
+  }
+
+  .cw-about-page-hero.cw-about-hero-v2--anti-anxiety .cw-about-hero__subtitle {
+    font-size: var(
+      --cw-about-subtitle-size,
+      clamp(0.68rem, 2.9vw + 0.35rem, 0.84rem)
+    ) !important;
+    max-width: 22rem;
+  }
+
+  .cw-about-page-hero.cw-about-hero-v2--anti-anxiety .cw-about-hero__cta {
+    width: min(100%, 17.5rem);
+    padding: 0.55rem 0.75rem;
+    font-size: clamp(0.54rem, 2.4vw + 0.22rem, 0.7rem) !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cw-about-page-hero .cw-about-hero__panel {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+  }
+
+  .cw-about-page-hero .cw-about-hero__panel img {
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .cw-about-page-hero .cw-about-hero-glimmer {
+    animation: none !important;
+    -webkit-text-fill-color: #fff !important;
+    color: #fff !important;
+    background: none !important;
+    filter: none !important;
+  }
+}

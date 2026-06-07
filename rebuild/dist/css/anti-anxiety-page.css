@@ -1,0 +1,228 @@
+/* Anti-anxiety page — override Duda dmDesktopBody 50% columns + 24px type */
+
+/* Desktop: comfortable reading measure */
+body.cw-about-hero-v2--anti-anxiety .cw-ax-content {
+  max-width: min(100%, var(--cw-content-max, 1100px));
+  margin-inline: auto;
+  box-sizing: border-box;
+}
+
+body.cw-about-hero-v2--anti-anxiety .cw-ax-content > .dmRespRow {
+  margin-top: 0.5rem !important;
+  margin-bottom: 0.5rem !important;
+  padding: 0 !important;
+}
+
+body.cw-about-hero-v2--anti-anxiety .cw-ax-content h3,
+body.cw-about-hero-v2--anti-anxiety .cw-ax-content h3 span {
+  margin: 0.35rem 0 0.25rem !important;
+  line-height: 1.25 !important;
+  text-align: center !important;
+}
+
+body.cw-about-hero-v2--anti-anxiety .cw-ax-content p,
+body.cw-about-hero-v2--anti-anxiety .cw-ax-content li,
+body.cw-about-hero-v2--anti-anxiety .cw-ax-content li span,
+body.cw-about-hero-v2--anti-anxiety .cw-ax-content p span,
+body.cw-about-hero-v2--anti-anxiety .cw-ax-content a {
+  line-height: 1.55 !important;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+/* ── Mobile: html.cw-ax-mobile is toggled by JS (beats dmDesktopBody runtime CSS) ── */
+html.cw-ax-mobile body.cw-about-hero-v2--anti-anxiety,
+html.cw-ax-mobile body.cw-about-hero-v2--anti-anxiety #dm,
+html.cw-ax-mobile body.cw-about-hero-v2--anti-anxiety .dmwr,
+html.cw-ax-mobile body.cw-about-hero-v2--anti-anxiety #dm-outer-wrapper,
+html.cw-ax-mobile body.cw-about-hero-v2--anti-anxiety #dmStyle_outerContainer,
+html.cw-ax-mobile body.cw-about-hero-v2--anti-anxiety #dmStyle_innerContainer,
+html.cw-ax-mobile body.cw-about-hero-v2--anti-anxiety #site_content,
+html.cw-ax-mobile body.cw-about-hero-v2--anti-anxiety #dmFirstContainer,
+html.cw-ax-mobile body.cw-about-hero-v2--anti-anxiety .cw-ax-content {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  overflow-x: hidden !important;
+  box-sizing: border-box !important;
+}
+
+html.cw-ax-mobile body.cw-about-hero-v2--anti-anxiety .cw-ax-content {
+  padding-left: 1rem !important;
+  padding-right: 1rem !important;
+}
+
+html.cw-ax-mobile body.cw-about-hero-v2--anti-anxiety .cw-ax-content .dmRespRow {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin-top: 0.3rem !important;
+  margin-bottom: 0.3rem !important;
+  padding: 0 !important;
+}
+
+html.cw-ax-mobile body.cw-about-hero-v2--anti-anxiety .cw-ax-content .dmRespColsWrapper,
+html.cw-ax-mobile body.cw-about-hero-v2--anti-anxiety .cw-ax-content .dmRespRow .dmRespColsWrapper {
+  display: flex !important;
+  flex-direction: column !important;
+  flex-wrap: nowrap !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  padding: 0 !important;
+  margin: 0 auto !important;
+  box-sizing: border-box !important;
+}
+
+html.cw-ax-mobile body.cw-about-hero-v2--anti-anxiety .rows-1200 .cw-ax-content .dmRespColsWrapper {
+  max-width: 100% !important;
+}
+
+/* Beat: .dmDesktopBody .dmRespRow .large-6 { width: 50% } */
+html.cw-ax-mobile body.cw-about-hero-v2--anti-anxiety .cw-ax-content .dmRespCol,
+html.cw-ax-mobile body.cw-about-hero-v2--anti-anxiety.dmDesktopBody .cw-ax-content .dmRespRow .dmRespCol,
+html.cw-ax-mobile body.cw-about-hero-v2--anti-anxiety.dmDesktopBody .cw-ax-content .dmRespRow .large-6,
+html.cw-ax-mobile body.cw-about-hero-v2--anti-anxiety.dmDesktopBody .cw-ax-content .dmRespRow .medium-6,
+html.cw-ax-mobile body.cw-about-hero-v2--anti-anxiety.dmDesktopBody .cw-ax-content .dmRespRow .small-12 {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  flex: 0 0 auto !important;
+  float: none !important;
+  clear: both !important;
+  position: relative !important;
+  left: 0 !important;
+  top: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+}
+
+html.cw-ax-mobile body.cw-about-hero-v2--anti-anxiety #dm .dmBody div[class*="u_"],
+html.cw-ax-mobile body.cw-about-hero-v2--anti-anxiety #dm .dmBody a[class*="u_"] {
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  margin-top: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  float: none !important;
+  position: relative !important;
+  left: 0 !important;
+  top: 0 !important;
+}
+
+/* Beat: #globalFontSizeStyle .size-24 { font-size: 24px !important } */
+html.cw-ax-mobile body.cw-about-hero-v2--anti-anxiety .cw-ax-content .size-24,
+html.cw-ax-mobile body.cw-about-hero-v2--anti-anxiety .cw-ax-content .font-size-24,
+html.cw-ax-mobile body.cw-about-hero-v2--anti-anxiety .cw-ax-content .m-size-19,
+html.cw-ax-mobile body.cw-about-hero-v2--anti-anxiety .cw-ax-content .m-font-size-19,
+html.cw-ax-mobile body.cw-about-hero-v2--anti-anxiety .cw-ax-content p,
+html.cw-ax-mobile body.cw-about-hero-v2--anti-anxiety .cw-ax-content li,
+html.cw-ax-mobile body.cw-about-hero-v2--anti-anxiety .cw-ax-content li span,
+html.cw-ax-mobile body.cw-about-hero-v2--anti-anxiety .cw-ax-content p span,
+html.cw-ax-mobile body.cw-about-hero-v2--anti-anxiety .cw-ax-content a {
+  font-size: 0.9375rem !important;
+  line-height: 1.5 !important;
+}
+
+html.cw-ax-mobile body.cw-about-hero-v2--anti-anxiety .cw-ax-content h3,
+html.cw-ax-mobile body.cw-about-hero-v2--anti-anxiety .cw-ax-content h3 span {
+  font-size: 1.2rem !important;
+  line-height: 1.25 !important;
+}
+
+html.cw-ax-mobile body.cw-about-hero-v2--anti-anxiety .cw-ax-content .imageWidget,
+html.cw-ax-mobile body.cw-about-hero-v2--anti-anxiety .cw-ax-content .imageWidget a,
+html.cw-ax-mobile body.cw-about-hero-v2--anti-anxiety .cw-ax-content .imageWidget img {
+  display: block !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  margin: 0.5rem auto 0 !important;
+}
+
+html.cw-ax-mobile body.cw-about-hero-v2--anti-anxiety .cw-about-page-hero.cw-page-hero-gallery {
+  --cw-page-hero-min-h-mobile: clamp(170px, 48vw, 240px);
+  margin-bottom: 0 !important;
+  padding: 0.45rem 0.4rem !important;
+}
+
+/* Hero → body copy: no dead zone (script node sits between hero and #dm, so use ~ not +) */
+html.cw-ax-mobile body.cw-about-hero-v2--anti-anxiety #cw-anti-anxiety-page-hero ~ #dm,
+html.cw-ax-mobile body.cw-about-hero-v2--anti-anxiety #cw-anti-anxiety-page-hero ~ #dm #dm-outer-wrapper,
+html.cw-ax-mobile body.cw-about-hero-v2--anti-anxiety #cw-anti-anxiety-page-hero ~ #dm .runtime-module-container,
+html.cw-ax-mobile body.cw-about-hero-v2--anti-anxiety #cw-anti-anxiety-page-hero ~ #dm #site_content,
+html.cw-ax-mobile body.cw-about-hero-v2--anti-anxiety #cw-anti-anxiety-page-hero ~ #dm .site_content,
+html.cw-ax-mobile body.cw-about-hero-v2--anti-anxiety #cw-anti-anxiety-page-hero ~ #dm #dmFirstContainer,
+html.cw-ax-mobile body.cw-about-hero-v2--anti-anxiety #cw-anti-anxiety-page-hero ~ #dm #dm_content,
+html.cw-ax-mobile body.cw-about-hero-v2--anti-anxiety #cw-anti-anxiety-page-hero ~ #dm .cw-ax-content {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+html.cw-ax-mobile body.cw-about-hero-v2--anti-anxiety .cw-ax-content > .dmRespRow,
+html.cw-ax-mobile body.cw-about-hero-v2--anti-anxiety .cw-ax-content > .dmRespRow:first-child,
+html.cw-ax-mobile body.cw-about-hero-v2--anti-anxiety [id="1246193055"],
+html.cw-ax-mobile body.cw-about-hero-v2--anti-anxiety [id="1246193055"] .dmRespColsWrapper {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+html.cw-ax-mobile body.cw-about-hero-v2--anti-anxiety .cw-ax-content .dmRespRow {
+  padding-top: 0 !important;
+  padding-bottom: 0.35rem !important;
+}
+
+html.cw-ax-mobile body.cw-about-hero-v2--anti-anxiety .cw-about-page-hero .cw-about-hero__panel {
+  opacity: 1 !important;
+  transform: none !important;
+  animation: none !important;
+}
+
+/* Duda hideAnimFix keeps copy hidden until desktop anim runs */
+html.cw-ax-mobile body.cw-about-hero-v2--anti-anxiety .dmNewParagraph,
+html.cw-ax-mobile body.cw-about-hero-v2--anti-anxiety [data-anim-desktop] {
+  visibility: visible !important;
+}
+
+/* Fallback when JS hasn't run yet */
+@media (max-width: 767px) {
+  body.cw-about-hero-v2--anti-anxiety #cw-anti-anxiety-page-hero ~ #dm,
+  body.cw-about-hero-v2--anti-anxiety #cw-anti-anxiety-page-hero ~ #dm #site_content,
+  body.cw-about-hero-v2--anti-anxiety #cw-anti-anxiety-page-hero ~ #dm .site_content,
+  body.cw-about-hero-v2--anti-anxiety #cw-anti-anxiety-page-hero ~ #dm .cw-ax-content {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  body.cw-about-hero-v2--anti-anxiety .cw-ax-content > .dmRespRow,
+  body.cw-about-hero-v2--anti-anxiety [id="1246193055"] {
+    margin-top: 0 !important;
+    padding-top: 0 !important;
+  }
+
+  body.cw-about-hero-v2--anti-anxiety .cw-ax-content .dmRespRow {
+    padding-top: 0 !important;
+  }
+
+  body.cw-about-hero-v2--anti-anxiety .dmNewParagraph,
+  body.cw-about-hero-v2--anti-anxiety [data-anim-desktop] {
+    visibility: visible !important;
+  }
+
+  body.cw-about-hero-v2--anti-anxiety.dmDesktopBody .cw-ax-content .dmRespRow .dmRespCol,
+  body.cw-about-hero-v2--anti-anxiety.dmDesktopBody .cw-ax-content .dmRespRow .large-6,
+  body.cw-about-hero-v2--anti-anxiety.dmDesktopBody .cw-ax-content .dmRespRow .medium-6 {
+    width: 100% !important;
+    max-width: 100% !important;
+    float: none !important;
+  }
+
+  body.cw-about-hero-v2--anti-anxiety .cw-ax-content .size-24,
+  body.cw-about-hero-v2--anti-anxiety .cw-ax-content .font-size-24 {
+    font-size: 0.9375rem !important;
+    line-height: 1.5 !important;
+  }
+}

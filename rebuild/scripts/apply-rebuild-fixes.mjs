@@ -14,6 +14,10 @@ import {
   injectBeforeAfterAssets,
 } from "./homepage-upgrades.mjs";
 import { upgradeMeetTheDoctor } from "./meet-the-doctor-upgrades.mjs";
+import {
+  upgradeAboutPageHeros,
+  ABOUT_HERO_REL_PATHS,
+} from "./about-page-hero-upgrades.mjs";
 import { injectCustomHeader } from "./header-replacement.mjs";
 import {
   injectCustomFooter,
@@ -262,6 +266,7 @@ function applyGlimmerTitles($) {
     if ($el.hasClass("cw-sr-only") || $el.hasClass("cw-hero-welcome")) return;
     if ($el.closest("#1904767910").length) return;
     if ($el.closest("#cw-meet-doctor-page-hero").length) return;
+    if ($el.closest(".cw-about-page-hero").length) return;
     $el.addClass("cw-glimmer-title");
   });
 }
@@ -272,9 +277,11 @@ function injectAssets($, relPath) {
 
   applyGlimmerTitles($);
   injectCustomHeader($);
+  const aboutHero = ABOUT_HERO_REL_PATHS.includes(relPath);
   injectDesignAssets($, {
     homepage: relPath === "index.html",
     meetDoctor: relPath === "meet-the-doctor/index.html",
+    aboutHero,
   });
   injectCustomFooter($);
 
@@ -296,6 +303,15 @@ function injectAssets($, relPath) {
   ) {
     head.append(
       '<link rel="stylesheet" href="/css/meet-the-doctor-upgrades.css" data-cw-upgrade="1">'
+    );
+  }
+
+  if (
+    ABOUT_HERO_REL_PATHS.includes(relPath) &&
+    !$('link[href*="about-page-hero-upgrades.css"]').length
+  ) {
+    head.append(
+      '<link rel="stylesheet" href="/css/about-page-hero-upgrades.css" data-cw-upgrade="1">'
     );
   }
 
@@ -356,6 +372,9 @@ function processFile(filePath) {
   if (rel === "meet-the-doctor/index.html") {
     upgradeMeetTheDoctor($);
   }
+  if (ABOUT_HERO_REL_PATHS.includes(rel)) {
+    upgradeAboutPageHeros($, rel);
+  }
   injectAssets($, rel);
 
   let out = $.html();
@@ -407,12 +426,15 @@ export function applyRebuildFixes(distDir = DIST) {
     ["css/fusco-reviews.css", "css/fusco-reviews.css"],
     ["css/cw-page-hero-gallery.css", "css/cw-page-hero-gallery.css"],
     ["css/meet-the-doctor-upgrades.css", "css/meet-the-doctor-upgrades.css"],
+    ["css/about-page-hero-upgrades.css", "css/about-page-hero-upgrades.css"],
+    ["css/anti-anxiety-page.css", "css/anti-anxiety-page.css"],
     ["js/knight-upgrades.js", "js/knight-upgrades.js"],
     ["js/fusco-reviews.js", "js/fusco-reviews.js"],
     ["js/homepage-upgrades.js", "js/homepage-upgrades.js"],
     ["js/cw-header.js", "js/cw-header.js"],
     ["js/cw-before-after.js", "js/cw-before-after.js"],
     ["js/meet-the-doctor-upgrades.js", "js/meet-the-doctor-upgrades.js"],
+    ["js/about-page-hero-upgrades.js", "js/about-page-hero-upgrades.js"],
   ];
   fs.mkdirSync(path.join(distDir, "css"), { recursive: true });
   fs.mkdirSync(path.join(distDir, "js"), { recursive: true });

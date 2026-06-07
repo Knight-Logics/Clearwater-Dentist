@@ -678,15 +678,14 @@ export function upgradeHomepage($) {
 
   patchDudaHeroInlineCss($);
 
-  /* Move Google reviews directly under hero */
-  const reviews = $("#1619377659").first();
-  if (reviews.length && primaryHero.length) {
-    const moved = reviews.clone();
-    reviews.remove();
-    primaryHero.after(moved);
-  }
-
   reorganizeHomepageLayout($);
+
+  /* Reviews below "Why Come to Clearwater Dentist?" — not directly under hero */
+  const aboutUs = $("#AboutUs").first();
+  const reviews = $("#1619377659").first();
+  if (aboutUs.length && reviews.length) {
+    reviews.insertAfter(aboutUs);
+  }
   upgradeHomepageVideoSections($);
   upgradeWhyCareVideoColumns($);
   upgradeMeetDoctorHomePhoto($);
@@ -747,15 +746,15 @@ function patchDudaHeroInlineCss($) {
   });
 }
 
-export function injectLateFullBleed($, { homepage = false, meetDoctor = false } = {}) {
-  if (!homepage && !meetDoctor) return;
+export function injectLateFullBleed($, { homepage = false, meetDoctor = false, aboutHero = false } = {}) {
+  if (!homepage && !meetDoctor && !aboutHero) return;
   if ($('link[href*="cw-fullbleed-overrides.css"]').length) return;
   $("body").append(
     '<link rel="stylesheet" href="/css/cw-fullbleed-overrides.css" data-cw-upgrade="late">'
   );
 }
 
-export function injectDesignAssets($, { homepage = false, meetDoctor = false } = {}) {
+export function injectDesignAssets($, { homepage = false, meetDoctor = false, aboutHero = false } = {}) {
   injectDesignFonts($);
   const head = $("head");
 
@@ -815,7 +814,7 @@ body.cw-home-v2 #1300582767 .videobgframe {
 </style>`);
   }
 
-  injectLateFullBleed($, { homepage, meetDoctor });
+  injectLateFullBleed($, { homepage, meetDoctor, aboutHero });
 
   if (homepage && !$('script[src*="homepage-upgrades.js"]').length) {
     $("body").append(

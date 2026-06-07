@@ -11,7 +11,7 @@ const DESKTOP_PANELS = [
   {
     pos: "bottom",
     src: `${CDN}/E3MSq9uRTaHssy3tQ3Kg_Dr+Nadia+Interview+2024+Edited.v2.0000000-1920w.jpg`,
-    focus: "center 18%",
+    focus: "38% 18%",
     alt: "Dr. Nadia Pokrovskaya interview",
   },
   {
@@ -31,9 +31,9 @@ const DESKTOP_PANELS = [
 const MOBILE_PANELS = [
   {
     pos: "left",
-    src: `${CDN}/UrpldxkQiWFQgZNLUJv4_Clearwater+Dentistry-Dr.+Nadia-2024+Testimony+Video+Edited+2.v2.0000000-1920w.jpg`,
-    focus: "center 22%",
-    alt: "Dr. Nadia Pokrovskaya patient testimony",
+    src: `${CDN}/ClearwaterDentist.ClearwaterFlorida.Dr.Nadia.Lady.in.front.of.food.truck.and.a.dog-1920w.jpeg`,
+    focus: "center 32%",
+    alt: "Dr. Nadia Pokrovskaya with therapy dog",
   },
   {
     pos: "bottom",
@@ -48,7 +48,7 @@ function panelHtml({ pos, src, focus, alt = "Dr. Nadia Pokrovskaya" }) {
 }
 
 function heroSectionHtml() {
-  return `<section class="cw-page-hero-gallery cw-meet-doctor-page-hero cw-meet-doctor-hero" id="cw-meet-doctor-page-hero"><div class="cw-meet-doctor-hero__bg cw-meet-doctor-hero__bg--grid cw-meet-doctor-hero__bg--desktop" aria-hidden="true">${DESKTOP_PANELS.map(panelHtml).join("")}</div><div class="cw-meet-doctor-hero__bg cw-meet-doctor-hero__bg--grid cw-meet-doctor-hero__bg--mobile" aria-hidden="true">${MOBILE_PANELS.map(panelHtml).join("")}</div><div class="cw-meet-doctor-hero__overlay" aria-hidden="true"></div><div class="cw-meet-doctor-hero__content"><h1 class="cw-meet-doctor-hero__title"><span class="cw-meet-doctor-glimmer" id="cw-meet-doctor-title">Meet Dr. Nadia Pokrovskaya, D.M.D</span></h1><p class="cw-meet-doctor-hero__subtitle">Concierge dentistry with an artistic touch — serving Clearwater, FL and Tampa Bay.</p></div></section>`;
+  return `<section class="cw-page-hero-gallery cw-meet-doctor-page-hero cw-meet-doctor-hero" id="cw-meet-doctor-page-hero"><div class="cw-meet-doctor-hero__bg cw-meet-doctor-hero__bg--grid cw-meet-doctor-hero__bg--desktop" aria-hidden="true">${DESKTOP_PANELS.map(panelHtml).join("")}</div><div class="cw-meet-doctor-hero__bg cw-meet-doctor-hero__bg--grid cw-meet-doctor-hero__bg--mobile" aria-hidden="true">${MOBILE_PANELS.map(panelHtml).join("")}</div><div class="cw-meet-doctor-hero__overlay" aria-hidden="true"></div><div class="cw-meet-doctor-hero__content"><h1 class="cw-meet-doctor-hero__title cw-meet-doctor-glimmer" id="cw-meet-doctor-title">Meet Dr. Nadia Pokrovskaya, D.M.D</h1><p class="cw-meet-doctor-hero__subtitle">Concierge dentistry with an artistic touch — serving Clearwater, FL and Tampa Bay.</p></div></section>`;
 }
 
 const BIO_PHOTO_SRC = `${CDN}/clearwater-dentist-clearwater-fl-dr-nadia-pokrovskaya-95753606-42cce6b4-739h.jpg`;
@@ -93,6 +93,15 @@ function stripDudaHeroPageStyles($) {
       $(el).html(cleaned);
     }
   });
+}
+
+function upgradeQuoteHeading($) {
+  const quoteBlock = $("#1178010041").first();
+  if (!quoteBlock.length || quoteBlock.find(".cw-meet-doctor-quote-heading").length) return;
+
+  quoteBlock.prepend(
+    `<h2 class="cw-meet-doctor-quote-heading">In Dr. Nadia&rsquo;s Words</h2>`
+  );
 }
 
 function upgradeBioPhotoColumn($) {
@@ -182,6 +191,8 @@ export function upgradeMeetTheDoctor($) {
     }
     quoteRow = $("#1704507619").first();
   }
+
+  upgradeQuoteHeading($);
 
   // Duda shell must not reserve viewport height above the bio block.
   $("#1716942098").removeAttr("style");

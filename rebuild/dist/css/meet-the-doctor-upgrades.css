@@ -187,6 +187,23 @@ body.cw-meet-doctor-v2 [id="1704507619"].cw-meet-doctor-lead-quote [id="11780100
   padding-top: 0 !important;
 }
 
+body.cw-meet-doctor-v2 [id="1704507619"].cw-meet-doctor-lead-quote [id="1178010041"] {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+body.cw-meet-doctor-v2 .cw-meet-doctor-quote-heading {
+  margin: 0 0 1rem !important;
+  padding: 0 0.5rem !important;
+  text-align: center !important;
+  font-family: var(--cw-font-display, "Epilogue", sans-serif) !important;
+  font-size: clamp(1.35rem, 2.2vw, 2rem) !important;
+  font-weight: 600 !important;
+  line-height: 1.15 !important;
+  letter-spacing: -0.02em;
+  color: var(--cw-teal, #0f3f55) !important;
+}
+
 body.cw-meet-doctor-v2 [id="1704507619"],
 body.cw-meet-doctor-v2 [id="1704507619"] .dmRespColsWrapper,
 body.cw-meet-doctor-v2 [id="1704507619"] .dmRespCol {
@@ -373,9 +390,9 @@ body.cw-meet-doctor-v2 #MeetDrNadiaPokrovskaya + #dm {
   overflow: visible;
 }
 
-#dm div.dmInner #site_content h1.cw-meet-doctor-hero__title span#cw-meet-doctor-title,
-.cw-meet-doctor-page-hero span#cw-meet-doctor-title,
-.cw-meet-doctor-page-hero span.cw-meet-doctor-glimmer {
+#dm div.dmInner #site_content h1.cw-meet-doctor-hero__title#cw-meet-doctor-title,
+.cw-meet-doctor-page-hero h1#cw-meet-doctor-title,
+.cw-meet-doctor-page-hero h1.cw-meet-doctor-glimmer {
   display: inline-block !important;
   max-width: none !important;
   white-space: nowrap !important;
@@ -390,8 +407,8 @@ body.cw-meet-doctor-v2 #MeetDrNadiaPokrovskaya + #dm {
 }
 
 @supports ((-webkit-background-clip: text) or (background-clip: text)) {
-  .cw-meet-doctor-page-hero span#cw-meet-doctor-title,
-  .cw-meet-doctor-page-hero span.cw-meet-doctor-glimmer {
+  .cw-meet-doctor-page-hero h1#cw-meet-doctor-title,
+  .cw-meet-doctor-page-hero h1.cw-meet-doctor-glimmer {
     background-image: linear-gradient(
       112deg,
       #ffffff 0%,
