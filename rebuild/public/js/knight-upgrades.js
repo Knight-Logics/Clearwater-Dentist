@@ -6,80 +6,7 @@
     phoneTel: "+17272858132",
     bookingUrl:
       "https://bookit.dentrixascend.com/soe/new/dental?pid=ASC2000000000940&mode=externalLink",
-    googleReviewUrl:
-      "https://www.google.com/maps/place/?q=place_id:ChIJddsi0kbuwogRVbiZCHZSQ3s",
-    reviews: [
-      {
-        name: "Verified Google Patient",
-        text:
-          "I have a fear of dentists due to past experiences. The doctor was very nice and knowledgeable, explaining everything and making me feel comfortable. Lyndsay the hygienist was absolutely amazing — gentle, patient, and thorough.",
-        stars: 5,
-      },
-      {
-        name: "Dennis C.",
-        text:
-          "Several damaged and missing teeth repaired with natural-looking crowns and bridges. After restoring the foundation, they brightened my smile with professional whitening.",
-        stars: 5,
-      },
-      {
-        name: "Jackie A.",
-        text:
-          "My smile was rebuilt with crowns, bridges, and fillings. Extractions and deep cleanings supported long-term health. Every restoration looks natural and feels comfortable.",
-        stars: 5,
-      },
-      {
-        name: "Susan C.",
-        text:
-          "Multiple teeth restored with natural-looking crowns. Each crown was custom-shaped and color-matched for a consistent, confident look.",
-        stars: 5,
-      },
-    ],
   };
-
-  function stars(n) {
-    return "★★★★★".slice(0, n);
-  }
-
-  function buildReviewsHtml() {
-    var cards = CONFIG.reviews
-      .map(function (r) {
-        return (
-          '<article class="cw-reviews__card">' +
-          "<strong>" +
-          r.name +
-          "</strong>" +
-          '<div class="cw-reviews__stars" aria-hidden="true">' +
-          stars(r.stars) +
-          "</div>" +
-          "<p>" +
-          r.text +
-          "</p>" +
-          "</article>"
-        );
-      })
-      .join("");
-
-    return (
-      '<section class="cw-reviews" aria-label="Patient reviews">' +
-      '<div class="cw-reviews__head">' +
-      "<h2>What Our Patients Say</h2>" +
-      '<div class="cw-reviews__stars">★★★★★ Google Reviews</div>' +
-      "</div>" +
-      '<div class="cw-reviews__track-wrap">' +
-      '<div class="cw-reviews__track" data-cw-track>' +
-      cards +
-      "</div>" +
-      "</div>" +
-      '<div class="cw-reviews__nav">' +
-      '<button type="button" data-cw-prev aria-label="Previous reviews">‹</button>' +
-      '<button type="button" data-cw-next aria-label="Next reviews">›</button>' +
-      "</div>" +
-      '<p class="cw-reviews__cta"><a href="' +
-      CONFIG.googleReviewUrl +
-      '" target="_blank" rel="noopener noreferrer">Read more reviews on Google →</a></p>' +
-      "</section>"
-    );
-  }
 
   function buildLeadFormHtml() {
     return (
@@ -109,89 +36,6 @@
       "</div>" +
       "</section>"
     );
-  }
-
-  function injectReviews() {
-    if (document.querySelector(".cw-reviews")) return;
-    if (document.querySelector(".cw-google-trust-section, [data-review-carousel]")) return;
-
-    var isHome =
-      document.body.classList.contains("dm-home-page") ||
-      location.pathname === "/" ||
-      /\/index\.html?$/.test(location.pathname) ||
-      location.pathname.endsWith("/Clearwater-Dentist/");
-
-    var isKeyService =
-      /emergency|cosmetic|implant|invisalign|meet-the-team|about|therapy-dog|clearwater-dentist/i.test(
-        location.pathname
-      );
-
-    if (!isHome && !isKeyService) return;
-
-    var html = buildReviewsHtml();
-    var wrap = document.createElement("div");
-    wrap.innerHTML = html;
-    var section = wrap.firstElementChild;
-
-    var main =
-      document.querySelector("#dmContent, .dmContent, main, .dmBody") ||
-      document.body;
-
-    if (isHome) {
-      var gallery = document.querySelector(
-        '[class*="photo_gallery"], [class*="PhotoGallery"], .dmPhotoGallery'
-      );
-      var target =
-        gallery && gallery.closest(".dmRespRow")
-          ? gallery.closest(".dmRespRow")
-          : main.querySelector(".dmRespRow:nth-of-type(3)");
-      if (target && target.parentNode) {
-        target.parentNode.insertBefore(section, target);
-      } else {
-        main.prepend(section);
-      }
-    } else {
-      var hero = main.querySelector(
-        ".dmInnerPage .dmRespRow, .dmInnerPage .dmRespCol"
-      );
-      if (hero && hero.parentNode) {
-        hero.parentNode.insertBefore(section, hero.nextSibling);
-      } else {
-        main.prepend(section);
-      }
-    }
-
-    initCarousel(section);
-  }
-
-  function initCarousel(root) {
-    var track = root.querySelector("[data-cw-track]");
-    if (!track) return;
-    var cards = track.querySelectorAll(".cw-reviews__card");
-    if (cards.length <= 1) return;
-
-    var index = 0;
-    var perView = window.innerWidth < 600 ? 1 : window.innerWidth < 900 ? 2 : 3;
-    var max = Math.max(0, cards.length - perView);
-
-    function update() {
-      perView = window.innerWidth < 600 ? 1 : window.innerWidth < 900 ? 2 : 3;
-      max = Math.max(0, cards.length - perView);
-      if (index > max) index = max;
-      var pct = (100 / perView) * index;
-      track.style.transform = "translateX(-" + pct + "%)";
-    }
-
-    root.querySelector("[data-cw-prev]")?.addEventListener("click", function () {
-      index = index <= 0 ? max : index - 1;
-      update();
-    });
-    root.querySelector("[data-cw-next]")?.addEventListener("click", function () {
-      index = index >= max ? 0 : index + 1;
-      update();
-    });
-    window.addEventListener("resize", update);
-    update();
   }
 
   function injectLeadForm() {
@@ -259,7 +103,6 @@
 
   document.addEventListener("DOMContentLoaded", function () {
     normalizeBookingLinks();
-    injectReviews();
     injectLeadForm();
   });
 })();

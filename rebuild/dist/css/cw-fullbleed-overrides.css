@@ -100,3 +100,35 @@ body.cw-home-v2 .cw-google-trust {
   padding-left: 0 !important;
   padding-right: 0 !important;
 }
+
+/* Meet-the-doctor — kill canvas gutter and keep hero edge-to-edge */
+body.cw-meet-doctor-v2#dmRoot,
+body.cw-meet-doctor-v2 .cw-site-header,
+body.cw-meet-doctor-v2 #cw-meet-doctor-page-hero,
+body.cw-meet-doctor-v2 #dm,
+body.cw-meet-doctor-v2 .dm_wrapper,
+body.cw-meet-doctor-v2 #dm-outer-wrapper,
+body.cw-meet-doctor-v2 #dmStyle_outerContainer,
+body.cw-meet-doctor-v2 #dmStyle_innerContainer,
+body.cw-meet-doctor-v2 .dmOuter,
+body.cw-meet-doctor-v2 .dmInner,
+body.cw-meet-doctor-v2 .dmLayoutWrapper,
+body.cw-meet-doctor-v2 #site_content,
+body.cw-meet-doctor-v2 .site_content,
+body.cw-meet-doctor-v2 #dmFirstContainer,
+body.cw-meet-doctor-v2 .dmBody {
+  width: 100% !important;
+  max-width: none !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  box-sizing: border-box;
+}
+
+body.cw-meet-doctor-v2 #cw-meet-doctor-page-hero.cw-page-hero-gallery {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}

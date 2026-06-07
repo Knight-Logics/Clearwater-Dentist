@@ -7,8 +7,20 @@ import path from "node:path";
 import { fileURLToPath } from "node:url";
 import * as cheerio from "cheerio";
 import { replaceGoogleReviewsSection } from "./google-reviews-section.mjs";
-import { upgradeHomepage, injectDesignAssets } from "./homepage-upgrades.mjs";
+import {
+  upgradeHomepage,
+  injectDesignAssets,
+  upgradeBeforeAfterSliders,
+  injectBeforeAfterAssets,
+} from "./homepage-upgrades.mjs";
+import { upgradeMeetTheDoctor } from "./meet-the-doctor-upgrades.mjs";
 import { injectCustomHeader } from "./header-replacement.mjs";
+import {
+  injectCustomFooter,
+  generateStandalonePages,
+  generateDiscoveryFiles,
+} from "./seo-footer-foundation.mjs";
+import { generateLiveParityPages } from "./live-page-parity.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.resolve(__dirname, "..");
@@ -141,6 +153,7 @@ function fixGalleryCaptions($) {
   for (const [oldText, newText] of Object.entries(CONFIG.galleryCaptions)) {
     $(".caption-title, .caption-text, h3, h4, p, span").each((_, el) => {
       const $el = $(el);
+      if ($el.closest("#1559410236").length) return;
       if ($el.children().length === 0 && $el.text().trim() === oldText) {
         $el.text(newText);
       }
@@ -218,10 +231,37 @@ function slimHeaderDom($) {
   $("#1760599980, #1041713361, #1456751328").remove();
 }
 
+function stripHtmlLintNoise($) {
+  $("[onclick]").each((_, el) => {
+    const onclick = $(el).attr("onclick") || "";
+    if (onclick.includes("dm_gaq_push_event")) {
+      $(el).removeAttr("onclick");
+    }
+  });
+
+  $("[style]").each((_, el) => {
+    const style = ($(el).attr("style") || "").trim();
+    if (!style) {
+      $(el).removeAttr("style");
+    }
+  });
+
+  $("style").each((_, el) => {
+    const css = $(el).html();
+    if (!css || !/\{\s*\}/.test(css)) return;
+    const cleaned = css.replace(/[^{}]+\{\s*\}/g, "");
+    if (cleaned !== css) {
+      $(el).html(cleaned);
+    }
+  });
+}
+
 function applyGlimmerTitles($) {
   $("h1").each((_, el) => {
     const $el = $(el);
     if ($el.hasClass("cw-sr-only") || $el.hasClass("cw-hero-welcome")) return;
+    if ($el.closest("#1904767910").length) return;
+    if ($el.closest("#cw-meet-doctor-page-hero").length) return;
     $el.addClass("cw-glimmer-title");
   });
 }
@@ -232,7 +272,11 @@ function injectAssets($, relPath) {
 
   applyGlimmerTitles($);
   injectCustomHeader($);
-  injectDesignAssets($, { homepage: relPath === "index.html" });
+  injectDesignAssets($, {
+    homepage: relPath === "index.html",
+    meetDoctor: relPath === "meet-the-doctor/index.html",
+  });
+  injectCustomFooter($);
 
   if (!$('link[href*="knight-upgrades.css"]').length) {
     head.append(
@@ -243,6 +287,15 @@ function injectAssets($, relPath) {
   if (!$('link[href*="fusco-reviews.css"]').length) {
     head.append(
       '<link rel="stylesheet" href="/css/fusco-reviews.css" data-cw-upgrade="1">'
+    );
+  }
+
+  if (
+    relPath === "meet-the-doctor/index.html" &&
+    !$('link[href*="meet-the-doctor-upgrades.css"]').length
+  ) {
+    head.append(
+      '<link rel="stylesheet" href="/css/meet-the-doctor-upgrades.css" data-cw-upgrade="1">'
     );
   }
 
@@ -257,6 +310,10 @@ function injectAssets($, relPath) {
       '<script src="/js/fusco-reviews.js" defer data-cw-upgrade="1"></script>'
     );
   }
+
+  /* Before/After sliders — site-wide (excludes hero background images) */
+  upgradeBeforeAfterSliders($);
+  injectBeforeAfterAssets($);
 
   $("html").attr("lang", "en");
 }
@@ -292,8 +349,12 @@ function processFile(filePath) {
   markDuplicateReviewBlocks($);
   replaceGoogleReviewsSection($);
   slimHeaderDom($);
+  stripHtmlLintNoise($);
   if (rel === "index.html") {
     upgradeHomepage($);
+  }
+  if (rel === "meet-the-doctor/index.html") {
+    upgradeMeetTheDoctor($);
   }
   injectAssets($, rel);
 
@@ -314,6 +375,26 @@ function updateSiteJson() {
 }
 
 export function applyRebuildFixes(distDir = DIST) {
+  const therapyVideoFrom = path.join(
+    ROOT,
+    "..",
+    "EditedVideos",
+    "Clearwater-Dentist-Featured-Video-Therapy-Dog.mp4"
+  );
+  const therapyVideoPublic = path.join(
+    ROOT,
+    "public",
+    "cdn",
+    "vid",
+    "a227a250",
+    "videos",
+    "Clearwater-Dentist-Featured-Video-Therapy-Dog.mp4"
+  );
+  if (fs.existsSync(therapyVideoFrom)) {
+    fs.mkdirSync(path.dirname(therapyVideoPublic), { recursive: true });
+    fs.copyFileSync(therapyVideoFrom, therapyVideoPublic);
+  }
+
   const assetPairs = [
     ["css/design-system.css", "css/design-system.css"],
     ["css/cw-header.css", "css/cw-header.css"],
@@ -321,11 +402,17 @@ export function applyRebuildFixes(distDir = DIST) {
     ["css/homepage-upgrades.css", "css/homepage-upgrades.css"],
     ["css/cw-fullbleed-overrides.css", "css/cw-fullbleed-overrides.css"],
     ["css/knight-upgrades.css", "css/knight-upgrades.css"],
+    ["css/cw-footer-seo.css", "css/cw-footer-seo.css"],
+    ["css/cw-before-after.css", "css/cw-before-after.css"],
     ["css/fusco-reviews.css", "css/fusco-reviews.css"],
+    ["css/cw-page-hero-gallery.css", "css/cw-page-hero-gallery.css"],
+    ["css/meet-the-doctor-upgrades.css", "css/meet-the-doctor-upgrades.css"],
     ["js/knight-upgrades.js", "js/knight-upgrades.js"],
     ["js/fusco-reviews.js", "js/fusco-reviews.js"],
     ["js/homepage-upgrades.js", "js/homepage-upgrades.js"],
     ["js/cw-header.js", "js/cw-header.js"],
+    ["js/cw-before-after.js", "js/cw-before-after.js"],
+    ["js/meet-the-doctor-upgrades.js", "js/meet-the-doctor-upgrades.js"],
   ];
   fs.mkdirSync(path.join(distDir, "css"), { recursive: true });
   fs.mkdirSync(path.join(distDir, "js"), { recursive: true });
@@ -336,6 +423,19 @@ export function applyRebuildFixes(distDir = DIST) {
     }
   }
 
+  if (fs.existsSync(therapyVideoPublic)) {
+    const therapyVideoDist = path.join(
+      distDir,
+      "cdn",
+      "vid",
+      "a227a250",
+      "videos",
+      "Clearwater-Dentist-Featured-Video-Therapy-Dog.mp4"
+    );
+    fs.mkdirSync(path.dirname(therapyVideoDist), { recursive: true });
+    fs.copyFileSync(therapyVideoPublic, therapyVideoDist);
+  }
+
   const files = walkHtml(distDir);
   let changed = 0;
   for (const f of files) {
@@ -343,7 +443,13 @@ export function applyRebuildFixes(distDir = DIST) {
     changed++;
   }
   updateSiteJson();
-  console.log(`apply-rebuild-fixes: processed ${changed} HTML files`);
+
+  const pageCount = generateStandalonePages(distDir);
+  const parityCount = generateLiveParityPages(distDir);
+  const discoveryCount = generateDiscoveryFiles(distDir);
+  console.log(
+    `apply-rebuild-fixes: processed ${changed} HTML files, generated ${pageCount} standalone pages, ${parityCount} parity pages/endpoints and ${discoveryCount} discovery files`
+  );
   return changed;
 }
 

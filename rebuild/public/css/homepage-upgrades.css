@@ -458,16 +458,27 @@ body.cw-home-v2 .cw-why-care-section .dmRespCol {
   margin: 0 0 1rem;
 }
 
-.cw-why-care-video a#1258890617 .text,
-.cw-why-care-video a#1258890617 span.text,
-.cw-why-care-video a#1258890617 span {
+/* Homepage CTA labels — beat Duda #dm … .dmWidget span.text { color: var(--btn-text-color) } */
+#dm div.dmInner #site_content a#1258890617.dmWidget,
+#dm div.dmInner #site_content a#1803396438.dmWidget {
+  --btn-text-color: #fff !important;
   color: #fff !important;
 }
 
-body.cw-home-v2 a#1803396438 .text,
-body.cw-home-v2 a#1803396438 span.text,
-body.cw-home-v2 a#1803396438 span {
+#dm div.dmInner #site_content a#1258890617.dmWidget span.text,
+#dm div.dmInner #site_content a#1258890617.dmWidget span#1484044619,
+#dm div.dmInner #site_content a#1803396438.dmWidget span.text,
+#dm div.dmInner #site_content a#1803396438.dmWidget span#1816819293 {
   color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+}
+
+#dm div.dmInner #site_content a#1803396438.dmWidget:hover span.text,
+#dm div.dmInner #site_content a#1803396438.dmWidget:hover span#1816819293,
+#dm div.dmInner #site_content a#1803396438.dmWidget:focus-visible span.text,
+#dm div.dmInner #site_content a#1803396438.dmWidget:focus-visible span#1816819293 {
+  color: #c07a2e !important;
+  -webkit-text-fill-color: #c07a2e !important;
 }
 
 .cw-why-care-video-inner {
@@ -492,6 +503,12 @@ body.cw-home-v2 a#1803396438 span {
 .cw-why-care-text h2 {
   margin: 0;
   line-height: 1.15;
+  text-align: center !important;
+}
+
+.cw-why-care-text h2 span {
+  display: inline-block !important;
+  text-align: center !important;
 }
 
 .cw-why-care-text p {
@@ -507,5 +524,487 @@ body.cw-home-v2 a#1803396438 span {
 
   .cw-why-care-text {
     order: 2;
+  }
+}
+
+/* ── Meet-the-doctor homepage video spotlights ── */
+.cw-video-spotlight {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.85rem;
+  min-height: 100%;
+  padding: clamp(1rem, 2vw, 1.5rem);
+  background: linear-gradient(135deg, #f4f8fa 0%, #eef4f7 100%);
+  border: 1px solid rgba(15, 63, 85, 0.1);
+  border-radius: 14px;
+  box-sizing: border-box;
+}
+
+.cw-video-spotlight__eyebrow {
+  margin: 0;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #c07a2e;
+}
+
+.cw-video-spotlight__title {
+  margin: 0;
+  font-size: clamp(1.35rem, 2.2vw, 1.85rem);
+  line-height: 1.15;
+  color: #0f3f55;
+}
+
+.cw-video-spotlight__intro {
+  margin: 0;
+  font-size: clamp(0.92rem, 1.1vw, 1rem);
+  line-height: 1.55;
+  color: #2a3b44;
+}
+
+.cw-video-spotlight__points {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.55rem;
+}
+
+.cw-video-spotlight__points li {
+  position: relative;
+  padding-left: 1.45rem;
+  font-size: clamp(0.88rem, 1vw, 0.96rem);
+  line-height: 1.45;
+  color: #2a3b44;
+}
+
+.cw-video-spotlight__points li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.28rem;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  background: #0f3f55
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E")
+    center / 0.62rem no-repeat;
+}
+
+.cw-video-spotlight__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-top: 0.15rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #0f3f55;
+  text-decoration: none;
+}
+
+.cw-video-spotlight__link:hover {
+  color: #c07a2e;
+}
+
+body.cw-home-v2 .cw-home-video-block {
+  position: relative !important;
+  overflow: hidden;
+  border-radius: 14px;
+  min-height: clamp(220px, 28vw, 365px);
+  aspect-ratio: 16 / 9;
+}
+
+body.cw-home-v2 .cw-home-video-block .videobgwrapper {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  overflow: hidden;
+}
+
+body.cw-home-v2 .cw-home-video-block .videobgwrapper,
+body.cw-home-v2 .cw-home-video-block .videobgframe {
+  border-radius: 14px;
+}
+
+body.cw-home-v2 .cw-home-video-block .videobgframe {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  display: block !important;
+}
+
+body.cw-home-v2 .cw-home-video-block .dmShape {
+  display: none !important;
+}
+
+.cw-video-mute-toggle {
+  position: absolute;
+  left: 12px;
+  bottom: 12px;
+  z-index: 5;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  padding: 0;
+  border: none;
+  border-radius: 999px;
+  background: rgba(15, 63, 85, 0.82);
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.28);
+  transition: background 0.18s ease, transform 0.18s ease;
+}
+
+.cw-video-mute-toggle:hover {
+  background: rgba(15, 63, 85, 0.95);
+  transform: translateY(-1px);
+}
+
+.cw-video-mute-toggle__on {
+  display: none;
+}
+
+.cw-home-video-block--unmuted .cw-video-mute-toggle__off {
+  display: none;
+}
+
+.cw-home-video-block--unmuted .cw-video-mute-toggle__on {
+  display: inline-flex;
+}
+
+body.cw-home-v2 .cw-home-video-block .cw-fullscreen-btn {
+  right: 12px;
+  bottom: 12px;
+  z-index: 6;
+}
+
+body.cw-home-v2 .cw-home-video-block .cw-video-mute-toggle {
+  z-index: 6;
+}
+
+/* Footer video carousel — matches Duda SSR slider layout + slide transition */
+body.cw-home-v2 .cw-home-video-carousel #1559410236 {
+  min-height: clamp(280px, 34vw, 440px);
+  height: clamp(280px, 34vw, 440px);
+  position: relative;
+  width: 100%;
+}
+
+body.cw-home-v2 .cw-home-video-carousel [data-auto="slider-wrapper"] {
+  height: 100%;
+}
+
+body.cw-home-v2 .cw-home-video-carousel [data-auto="actual-slider"],
+body.cw-home-v2 .cw-home-video-carousel [data-auto="slider-slides-container"],
+body.cw-home-v2 .cw-home-video-carousel .kdBoXh {
+  height: 100%;
+}
+
+body.cw-home-v2 .cw-home-video-carousel video[data-grab="slide-media"] {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* Hide the tiny default Duda pagination dots — replaced by labeled tabs */
+body.cw-home-v2 .cw-home-video-carousel .jaQWIi {
+  display: none !important;
+}
+
+/* Side navigation arrows */
+.cw-carousel-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  padding: 0;
+  border: none;
+  border-radius: 999px;
+  background: rgba(15, 63, 85, 0.85);
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.28);
+  transition: background 0.18s ease, transform 0.18s ease, opacity 0.18s ease;
+}
+
+.cw-carousel-arrow:hover {
+  background: #c07a2e;
+}
+
+.cw-carousel-arrow:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+}
+
+.cw-carousel-arrow--prev {
+  left: clamp(8px, 1.5vw, 22px);
+}
+
+.cw-carousel-arrow--next {
+  right: clamp(8px, 1.5vw, 22px);
+}
+
+.cw-carousel-arrow svg {
+  transform: translateX(-1px);
+}
+
+.cw-carousel-arrow--next svg {
+  transform: translateX(1px);
+}
+
+/* Labeled tab strip */
+.cw-carousel-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: clamp(0.35rem, 1vw, 0.85rem);
+  max-width: 1100px;
+  margin: 1.1rem auto 0;
+  padding: 0 1rem;
+}
+
+.cw-carousel-tab {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.5rem 0.5rem 0.35rem;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+  color: #5a6b73;
+  transition: color 0.18s ease;
+}
+
+.cw-carousel-tab__dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: #ced6d9;
+  transition: background 0.18s ease, transform 0.18s ease;
+}
+
+.cw-carousel-tab__label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+}
+
+.cw-carousel-tab:hover {
+  color: #0f3f55;
+}
+
+.cw-carousel-tab:hover .cw-carousel-tab__dot {
+  background: #b99885;
+}
+
+.cw-carousel-tab.is-active {
+  color: #0f3f55;
+}
+
+.cw-carousel-tab.is-active .cw-carousel-tab__dot {
+  background: #c07a2e;
+  transform: scale(1.35);
+}
+
+.cw-carousel-tab:focus-visible {
+  outline: 2px solid #0f3f55;
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/* Per-card audio toggle */
+.cw-slide-mute {
+  position: absolute;
+  left: 14px;
+  bottom: 14px;
+  z-index: 6;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  border: none;
+  border-radius: 999px;
+  background: rgba(15, 63, 85, 0.82);
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.3);
+  transition: background 0.18s ease, transform 0.18s ease;
+}
+
+.cw-slide-mute:hover {
+  background: rgba(15, 63, 85, 0.96);
+  transform: translateY(-1px);
+}
+
+.cw-slide-mute:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+.cw-slide-mute__on {
+  display: none;
+}
+
+.cw-slide-mute[aria-pressed="false"] .cw-slide-mute__off {
+  display: none;
+}
+
+.cw-slide-mute[aria-pressed="false"] .cw-slide-mute__on {
+  display: inline-flex;
+}
+
+.cw-slide-mute[aria-pressed="false"] {
+  background: #c07a2e;
+}
+
+/* Fullscreen icon (bottom-right) — opens the full-control modal player */
+.cw-fullscreen-btn {
+  position: absolute;
+  right: 14px;
+  bottom: 14px;
+  z-index: 6;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  border: none;
+  border-radius: 999px;
+  background: rgba(15, 63, 85, 0.82);
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.3);
+  transition: background 0.18s ease, transform 0.18s ease;
+}
+
+.cw-fullscreen-btn:hover {
+  background: #c07a2e;
+  transform: translateY(-1px);
+}
+
+.cw-fullscreen-btn:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+/* Modal video player */
+.cw-video-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: clamp(1rem, 4vw, 3rem);
+}
+
+.cw-video-modal.is-open {
+  display: flex;
+}
+
+.cw-video-modal__backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(8, 24, 33, 0.86);
+  backdrop-filter: blur(2px);
+}
+
+.cw-video-modal__dialog {
+  position: relative;
+  z-index: 1;
+  width: min(960px, 100%);
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.cw-video-modal__frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+}
+
+.cw-video-modal__video {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: contain;
+  background: #000;
+}
+
+.cw-video-modal__title {
+  margin: 0;
+  text-align: center;
+  color: #fff;
+  font-size: clamp(1.05rem, 2.4vw, 1.4rem);
+  font-weight: 700;
+}
+
+.cw-video-modal__close {
+  position: absolute;
+  top: -14px;
+  right: -14px;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: none;
+  border-radius: 999px;
+  background: #fff;
+  color: #0f3f55;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4);
+  transition: background 0.18s ease, color 0.18s ease;
+}
+
+.cw-video-modal__close:hover {
+  background: #c07a2e;
+  color: #fff;
+}
+
+.cw-video-modal__close:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+}
+
+body.cw-modal-open {
+  overflow: hidden;
+}
+
+@media (max-width: 767px) {
+  .cw-carousel-tab__label {
+    font-size: 0.75rem;
+  }
+  .cw-carousel-arrow {
+    width: 40px;
+    height: 40px;
+  }
+  .cw-video-modal__close {
+    top: 8px;
+    right: 8px;
   }
 }

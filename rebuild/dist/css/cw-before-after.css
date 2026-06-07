@@ -1,0 +1,162 @@
+/* Duda Before & After widget — static rebuild replica (matches live overlap) */
+
+#dm .dmBeforeAndAfter {
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+#dm .dmBeforeAndAfter *,
+#dm .dmBeforeAndAfter ::after,
+#dm .dmBeforeAndAfter ::before {
+  box-sizing: border-box;
+}
+
+#dm .dmBeforeAndAfter.baf__container {
+  position: relative;
+  max-width: 100%;
+  max-height: 100%;
+  overflow: hidden;
+  user-select: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  touch-action: pan-y;
+}
+
+#dm .dmBeforeAndAfter.baf__container .baf__img-preview.baf__before {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  user-select: none;
+  pointer-events: none;
+  object-fit: cover;
+  object-position: center;
+  transform: translate3d(0, 0, 0);
+}
+
+#dm .dmBeforeAndAfter.baf__container .baf__img-preview.baf__after {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+  transform: translate(50%, 0);
+}
+
+#dm .dmBeforeAndAfter.baf__container .baf__img-preview.baf__after img {
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  user-select: none;
+  pointer-events: none;
+  object-fit: cover;
+  object-position: center;
+  transform: translate(-50%, 0);
+}
+
+#dm .dmBeforeAndAfter.baf__container .baf__handle {
+  color: #fff;
+  width: 45px;
+  height: 45px;
+  background-color: transparent;
+  cursor: ew-resize;
+  border: 4px solid currentColor;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 4;
+}
+
+#dm .dmBeforeAndAfter.baf__container .baf__handle .baf__arrow {
+  border-style: solid;
+  border-width: 7px 9px;
+  border-color: transparent currentColor;
+  border-left: none;
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  left: 6px;
+  width: 0;
+  height: 0;
+}
+
+#dm .dmBeforeAndAfter.baf__container .baf__handle .baf__arrow.baf__right {
+  left: auto;
+  right: 6px;
+  transform: translate(0, -50%) rotate(180deg);
+}
+
+#dm .dmBeforeAndAfter.baf__container .baf__handle::after,
+#dm .dmBeforeAndAfter.baf__container .baf__handle::before {
+  content: "";
+  height: 200vh;
+  width: 0;
+  border: 2px solid currentColor;
+  position: absolute;
+  top: -200vh;
+  left: 50%;
+  transform: translate(-50%, 0);
+}
+
+#dm .dmBeforeAndAfter.baf__container .baf__handle::after {
+  top: auto;
+  bottom: -200vh;
+}
+
+#dm .dmBeforeAndAfter.baf__container.baf__dragging .baf__img-preview.baf__after,
+#dm .dmBeforeAndAfter.baf__container.baf__dragging .baf__img-preview.baf__after img,
+#dm .dmBeforeAndAfter.baf__container.baf__dragging .baf__handle {
+  will-change: transform;
+}
+
+#dm .dmBeforeAndAfter.baf__container.baf__dragging .baf__handle {
+  left: 0;
+}
+
+#dm .dmBeforeAndAfter.baf__container .baf__labels-wrapper {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: none;
+  padding: 15px;
+  transition: opacity 0.3s ease-in-out;
+  opacity: 0;
+  z-index: 3;
+}
+
+#dm .dmBeforeAndAfter.baf__container .baf__labels-wrapper .baf__title {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 0.4em 1.3em;
+  max-width: calc(50% - 15px);
+  text-align: left;
+  border-radius: 3px;
+  user-select: none;
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+#dm .dmBeforeAndAfter.baf__container .baf__labels-wrapper .baf__title.baf__before {
+  text-align: right;
+}
+
+#dm .dmBeforeAndAfter.baf__container.dmBeforeAndAfter--always-show .baf__labels-wrapper {
+  opacity: 1;
+}
+
+@media (max-width: 767px) {
+  #dm .dmBeforeAndAfter.baf__container .baf__labels-wrapper {
+    padding: 10px;
+  }
+
+  #dm .dmBeforeAndAfter.baf__container .baf__labels-wrapper .baf__title {
+    padding: 0.4em 0.7em;
+    font-size: 0.78rem;
+  }
+}

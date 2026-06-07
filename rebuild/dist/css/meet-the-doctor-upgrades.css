@@ -1,0 +1,486 @@
+/* Meet-the-doctor — page-specific overrides on shared gallery hero */
+
+/* Content was relocated out of the Duda shell; collapse the empty container so
+   the footer below it isn't pushed down by a blank gap. */
+body.cw-meet-doctor-v2 #dmFirstContainer.cw-empty-shell {
+  display: none !important;
+}
+
+@keyframes cwMeetDoctorTitleAura {
+  0%,
+  58%,
+  82%,
+  100% {
+    filter: drop-shadow(0 2px 14px rgba(0, 0, 0, 0.45))
+      drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+  }
+  70% {
+    filter: drop-shadow(0 2px 14px rgba(0, 0, 0, 0.45))
+      drop-shadow(0 0 26px rgba(255, 255, 255, 0.95))
+      drop-shadow(0 0 44px rgba(255, 255, 255, 0.45));
+  }
+}
+
+@keyframes cwMeetDoctorStaffGlimmerLTR {
+  0%,
+  82% {
+    background-position: 0% 50%;
+  }
+  100% {
+    background-position: 165% 50%;
+  }
+}
+
+@keyframes cwMeetDoctorStaffAura {
+  0%,
+  81%,
+  100% {
+    filter: drop-shadow(0 1px 12px rgba(0, 0, 0, 0.4))
+      drop-shadow(0 0 8px rgba(245, 240, 230, 0.25));
+  }
+  91% {
+    filter: drop-shadow(0 1px 12px rgba(0, 0, 0, 0.4))
+      drop-shadow(0 0 22px rgba(255, 254, 248, 0.95))
+      drop-shadow(0 0 36px rgba(245, 240, 230, 0.55));
+  }
+}
+
+:root {
+  --cw-meet-bio-stack-bp: 960px;
+}
+
+body.cw-design-v2.cw-meet-doctor-v2 {
+  padding-top: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  margin: 0 !important;
+  overflow-x: clip;
+}
+
+/* Off-canvas mobile nav is parked off-screen (translateX) and would add
+   horizontal scroll on narrow viewports — clip it at the root for this page. */
+html:has(body.cw-meet-doctor-v2) {
+  overflow-x: clip;
+}
+
+body.cw-meet-doctor-v2 .cw-site-header {
+  background: rgba(255, 255, 255, 0.9) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+body.cw-meet-doctor-v2 #site_content,
+body.cw-meet-doctor-v2 #dmFirstContainer,
+body.cw-meet-doctor-v2 #allWrapper,
+body.cw-meet-doctor-v2 #dm_content,
+body.cw-meet-doctor-v2 [id="1716942098"],
+body.cw-meet-doctor-v2 .dmHomeRespTmpl,
+body.cw-meet-doctor-v2 #dm,
+body.cw-meet-doctor-v2 .dm_wrapper,
+body.cw-meet-doctor-v2 [id="1901957768"],
+body.cw-meet-doctor-v2 #dm-outer-wrapper,
+body.cw-meet-doctor-v2 #dmStyle_outerContainer,
+body.cw-meet-doctor-v2 #dmStyle_innerContainer,
+body.cw-meet-doctor-v2 .dmLayoutWrapper,
+body.cw-meet-doctor-v2 .dmOuter,
+body.cw-meet-doctor-v2 .dmInner,
+body.cw-meet-doctor-v2 .dmPageBody {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  min-height: 0 !important;
+}
+
+body.cw-meet-doctor-v2 #site_content > .p_hfcontainer,
+body.cw-meet-doctor-v2 #site_content .site_content > *:not(#dmFirstContainer),
+body.cw-meet-doctor-v2 #hamburger-header-container,
+body.cw-meet-doctor-v2 .dmHeaderContainer,
+body.cw-meet-doctor-v2 #hcontainer,
+body.cw-meet-doctor-v2 .stickyHeaderSpacer,
+body.cw-meet-doctor-v2 #stickyHeaderSpacer {
+  display: none !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: hidden !important;
+}
+
+body.cw-meet-doctor-v2 #site_content,
+body.cw-meet-doctor-v2 #site_content .site_content,
+body.cw-meet-doctor-v2 .dmLayoutWrapper,
+body.cw-meet-doctor-v2 .dmStandardDesktop,
+body.cw-meet-doctor-v2 #dmFirstContainer,
+body.cw-meet-doctor-v2 #allWrapper,
+body.cw-meet-doctor-v2 #dm_content,
+body.cw-meet-doctor-v2 [id="1716942098"],
+body.cw-meet-doctor-v2 .dmHomeRespTmpl {
+  display: block !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+  min-height: 0 !important;
+  height: auto !important;
+}
+
+body.cw-meet-doctor-v2 [id="1716942098"] {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+body.cw-meet-doctor-v2 #cw-meet-doctor-page-hero {
+  /* Direct child of <body> — use 100% width, not 100vw breakout (avoids scrollbar shift) */
+  width: 100% !important;
+  max-width: 100% !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  /* Start below the fixed header so background panels aren't hidden under it */
+  margin-top: var(--cw-header-offset, 116px) !important;
+  margin-bottom: 0 !important;
+  /* Edge-to-edge photo grid; text padding lives on __content instead */
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  padding-top: clamp(0.75rem, 1.8vh, 1.25rem) !important;
+  padding-bottom: clamp(0.75rem, 1.8vh, 1.25rem) !important;
+  box-sizing: border-box !important;
+}
+
+body.cw-meet-doctor-v2 #cw-meet-doctor-page-hero .cw-meet-doctor-hero__content {
+  width: 100% !important;
+  max-width: 100% !important;
+  padding-left: clamp(0.65rem, 2.5vw, 1.25rem);
+  padding-right: clamp(0.65rem, 2.5vw, 1.25rem);
+  box-sizing: border-box;
+}
+
+body.cw-meet-doctor-v2 #cw-meet-doctor-page-hero + [id="1704507619"],
+body.cw-meet-doctor-v2 [id="1704507619"].cw-meet-doctor-lead-quote {
+  position: relative;
+  z-index: 1;
+  margin: 10px auto 0 !important;
+  padding: 0 clamp(0.75rem, 2vw, 1.5rem) !important;
+  width: min(100%, var(--cw-content-max, 2100px)) !important;
+  max-width: min(100%, var(--cw-content-max, 2100px)) !important;
+  box-sizing: border-box !important;
+}
+
+body.cw-meet-doctor-v2 [id="1704507619"] + #dm {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  min-height: 0 !important;
+}
+
+/* Fallback when quote is still inside the Duda shell (stale cache / editor DOM). */
+body.cw-meet-doctor-v2 #cw-meet-doctor-page-hero ~ #dm {
+  margin-top: 10px !important;
+  padding-top: 0 !important;
+  min-height: 0 !important;
+}
+
+body.cw-meet-doctor-v2 #cw-meet-doctor-page-hero ~ #dm [id="1716942098"] > [id="1704507619"]:first-child {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+body.cw-meet-doctor-v2 [id="1704507619"].cw-meet-doctor-lead-quote .dmRespColsWrapper,
+body.cw-meet-doctor-v2 [id="1704507619"].cw-meet-doctor-lead-quote .dmRespCol,
+body.cw-meet-doctor-v2 [id="1704507619"].cw-meet-doctor-lead-quote [id="1178010041"] {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+body.cw-meet-doctor-v2 [id="1704507619"],
+body.cw-meet-doctor-v2 [id="1704507619"] .dmRespColsWrapper,
+body.cw-meet-doctor-v2 [id="1704507619"] .dmRespCol {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+body.cw-meet-doctor-v2 [id="1704507619"] + #MeetDrNadiaPokrovskaya,
+body.cw-meet-doctor-v2 [id="1704507619"] + #dm {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* ── Bio section: centered portrait + 2×2 highlight cards + centered narrative ── */
+body.cw-meet-doctor-v2 #MeetDrNadiaPokrovskaya.cw-meet-doctor-bio-row {
+  position: relative;
+  z-index: 1;
+  margin: 14px auto 0 !important;
+  padding: 0 clamp(0.875rem, 2.5vw, 2.5rem) !important;
+  width: min(100%, var(--cw-content-max, 2100px)) !important;
+  max-width: min(100%, var(--cw-content-max, 2100px)) !important;
+  box-sizing: border-box !important;
+}
+
+/* Stack: photo on top (centered), cards below */
+body.cw-meet-doctor-v2 #MeetDrNadiaPokrovskaya .dmRespColsWrapper {
+  display: block !important;
+  margin: 0 auto !important;
+  padding-top: 0 !important;
+  max-width: 1040px !important;
+}
+
+/* Centered portrait photo */
+body.cw-meet-doctor-v2 [id="1018585677"] {
+  display: block !important;
+  float: none !important;
+  width: clamp(220px, 42vw, 300px) !important;
+  max-width: 300px !important;
+  margin: 0 auto 1.75rem !important;
+  padding: 0 !important;
+  overflow: visible !important;
+  background: none !important;
+  background-image: none !important;
+  min-height: 0 !important;
+}
+
+body.cw-meet-doctor-v2 [id="1018585677"] .cw-meet-doctor-bio-photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: center 12%;
+  border-radius: 14px;
+  box-shadow: 0 18px 40px -18px rgba(15, 63, 85, 0.45);
+}
+
+/* Text column full width */
+body.cw-meet-doctor-v2 [id="1666161237"] {
+  float: none !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* 2×2 highlight card grid for the four intro paragraphs */
+body.cw-meet-doctor-v2 [id="1352914219"].cw-bio-cards {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: clamp(0.85rem, 1.6vw, 1.25rem) !important;
+  text-align: left !important;
+}
+
+body.cw-meet-doctor-v2 [id="1352914219"].cw-bio-cards > p {
+  margin: 0 !important;
+  position: relative;
+  padding: clamp(1rem, 1.6vw, 1.35rem) clamp(1.05rem, 1.8vw, 1.5rem) !important;
+  padding-left: clamp(2.75rem, 3.2vw, 3.25rem) !important;
+  background: #f4f8fa;
+  border: 1px solid rgba(15, 63, 85, 0.08);
+  border-radius: 12px;
+  font-size: clamp(0.9rem, 0.3vw + 0.84rem, 1rem);
+  line-height: 1.55;
+  color: #2a3b44;
+}
+
+body.cw-meet-doctor-v2 [id="1352914219"].cw-bio-cards > p::before {
+  content: "";
+  position: absolute;
+  top: clamp(1rem, 1.6vw, 1.35rem);
+  left: clamp(0.9rem, 1.4vw, 1.15rem);
+  width: 1.3rem;
+  height: 1.3rem;
+  border-radius: 50%;
+  background: var(--cw-teal, #0f3f55)
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3.2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E")
+    center / 0.72rem no-repeat;
+}
+
+/* Continuation narrative — centered, readable measure */
+body.cw-meet-doctor-v2 [id="1930240602"].cw-meet-doctor-bio-continuation {
+  position: relative;
+  z-index: 1;
+  margin: 1.5rem auto 0 !important;
+  padding: 0 clamp(0.875rem, 2.5vw, 2.5rem) !important;
+  width: 100% !important;
+  max-width: 880px !important;
+  box-sizing: border-box !important;
+}
+
+body.cw-meet-doctor-v2 [id="1930240602"].cw-meet-doctor-bio-continuation .dmRespColsWrapper,
+body.cw-meet-doctor-v2 [id="1930240602"].cw-meet-doctor-bio-continuation .dmRespCol {
+  margin: 0 auto !important;
+  padding: 0 !important;
+  float: none !important;
+  width: 100% !important;
+}
+
+body.cw-meet-doctor-v2 #MeetDrNadiaPokrovskaya + [id="1930240602"] {
+  margin-top: 1.5rem !important;
+}
+
+body.cw-meet-doctor-v2 [id="1930240602"] + #dm,
+body.cw-meet-doctor-v2 #MeetDrNadiaPokrovskaya + #dm {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  min-height: 0 !important;
+}
+
+/* ── Tablet / narrow: tighten side padding ── */
+@media (max-width: 959px) {
+  body.cw-meet-doctor-v2 #MeetDrNadiaPokrovskaya.cw-meet-doctor-bio-row,
+  body.cw-meet-doctor-v2 [id="1930240602"].cw-meet-doctor-bio-continuation,
+  body.cw-meet-doctor-v2 [id="1704507619"].cw-meet-doctor-lead-quote {
+    padding-left: clamp(0.75rem, 3vw, 1.5rem) !important;
+    padding-right: clamp(0.75rem, 3vw, 1.5rem) !important;
+  }
+}
+
+/* ── Cards collapse to a single column on narrow screens ── */
+@media (max-width: 620px) {
+  body.cw-meet-doctor-v2 [id="1352914219"].cw-bio-cards {
+    grid-template-columns: 1fr !important;
+  }
+
+  body.cw-meet-doctor-v2 [id="1018585677"] {
+    width: clamp(200px, 62vw, 280px) !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  body.cw-meet-doctor-v2 #cw-meet-doctor-page-hero + [id="1704507619"],
+  body.cw-meet-doctor-v2 [id="1704507619"].cw-meet-doctor-lead-quote {
+    padding-left: clamp(0.75rem, 4vw, 1.125rem) !important;
+    padding-right: clamp(0.75rem, 4vw, 1.125rem) !important;
+  }
+}
+
+/* Meet-the-doctor needs extra height so portrait faces stay in frame */
+.cw-meet-doctor-page-hero.cw-page-hero-gallery {
+  --cw-page-hero-min-h: clamp(340px, 44vh, 480px);
+  --cw-page-hero-min-h-mobile: clamp(320px, 58vw, 420px);
+}
+
+@media (max-width: 767px) {
+  body.cw-meet-doctor-v2 #cw-meet-doctor-page-hero {
+    padding-top: 0.65rem !important;
+    padding-bottom: 0.65rem !important;
+  }
+
+  /* Mobile portrait — anchor on the face (upper third of the photo) */
+  .cw-meet-doctor-hero__bg--mobile .cw-meet-doctor-hero__panel--bottom img {
+    object-position: center 12% !important;
+  }
+}
+
+.cw-meet-doctor-page-hero h1.cw-meet-doctor-hero__title {
+  margin: 0 !important;
+  padding: 0 !important;
+  line-height: 1.05 !important;
+  text-align: center !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  overflow: visible;
+}
+
+#dm div.dmInner #site_content h1.cw-meet-doctor-hero__title span#cw-meet-doctor-title,
+.cw-meet-doctor-page-hero span#cw-meet-doctor-title,
+.cw-meet-doctor-page-hero span.cw-meet-doctor-glimmer {
+  display: inline-block !important;
+  max-width: none !important;
+  white-space: nowrap !important;
+  font-weight: 400 !important;
+  font-size: var(--cw-meet-title-size, clamp(1.25rem, 4.2vw, 3.5rem)) !important;
+  line-height: 1.05 !important;
+  letter-spacing: -0.015em;
+  font-family: var(--cw-font-display, "Epilogue", sans-serif) !important;
+  color: #ffffff !important;
+  text-shadow: 0 2px 24px rgba(0, 0, 0, 0.45);
+  vertical-align: top;
+}
+
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+  .cw-meet-doctor-page-hero span#cw-meet-doctor-title,
+  .cw-meet-doctor-page-hero span.cw-meet-doctor-glimmer {
+    background-image: linear-gradient(
+      112deg,
+      #ffffff 0%,
+      #ffffff 24%,
+      #ffffff 37%,
+      #e8d4a8 50%,
+      #ffffff 63%,
+      #f5ecd8 78%,
+      #ffffff 100%
+    ) !important;
+    background-size: 280% auto !important;
+    background-position: 0% 50% !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    color: transparent !important;
+    animation:
+      cwHeroGlimmerSweepLTR 12.5s ease-in-out infinite,
+      cwMeetDoctorTitleAura 12.5s ease-in-out infinite !important;
+  }
+}
+
+.cw-meet-doctor-page-hero .cw-meet-doctor-hero__content {
+  --cw-meet-title-size: clamp(1.25rem, 4.2vw, 3.5rem);
+}
+
+.cw-meet-doctor-page-hero .cw-meet-doctor-hero__staff-tag {
+  margin: 0.3rem auto 0 !important;
+  padding: 0 0.5rem;
+  display: inline-block !important;
+  color: #f5f0e6 !important;
+  font-size: calc(var(--cw-meet-title-size, 3.5rem) * 0.88) !important;
+  font-weight: 600 !important;
+  line-height: 1.05 !important;
+  letter-spacing: 0.02em;
+  text-align: center !important;
+  text-shadow: 0 1px 14px rgba(0, 0, 0, 0.4);
+}
+
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+  .cw-meet-doctor-page-hero .cw-meet-doctor-hero__staff-tag.cw-meet-doctor-staff-glimmer {
+    background-image: linear-gradient(
+      112deg,
+      #f5f0e6 0%,
+      #f5f0e6 22%,
+      #fffef8 36%,
+      #ffffff 50%,
+      #f5ecd8 64%,
+      #fffef8 78%,
+      #f5f0e6 100%
+    ) !important;
+    background-size: 280% auto !important;
+    background-position: 0% 50% !important;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    color: transparent !important;
+    animation:
+      cwMeetDoctorStaffGlimmerLTR 12.5s ease-in-out infinite,
+      cwMeetDoctorStaffAura 12.5s ease-in-out infinite !important;
+  }
+}
+
+.cw-meet-doctor-page-hero .cw-meet-doctor-hero__subtitle {
+  margin: 0.35rem auto 0 !important;
+  max-width: 42rem;
+  padding: 0 0.5rem;
+  color: rgba(255, 255, 255, 0.94) !important;
+  font-size: clamp(0.82rem, 0.32vw + 0.74rem, 1.05rem) !important;
+  line-height: 1.35 !important;
+  text-align: center !important;
+  text-wrap: balance;
+  text-shadow: 0 1px 16px rgba(0, 0, 0, 0.45);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cw-meet-doctor-page-hero .cw-meet-doctor-glimmer {
+    animation: none !important;
+    -webkit-text-fill-color: #fff !important;
+    color: #fff !important;
+    background: none !important;
+    filter: none !important;
+  }
+
+  .cw-meet-doctor-page-hero .cw-meet-doctor-staff-glimmer {
+    animation: none !important;
+    -webkit-text-fill-color: #f5f0e6 !important;
+    color: #f5f0e6 !important;
+    background: none !important;
+    filter: none !important;
+  }
+}

@@ -15,9 +15,33 @@
     .replace(/\/index\.html$/, "/")
     .replace(/\/$/, "") || "/";
 
-  document.querySelectorAll(".cw-site-header__nav-link, .cw-mobile-nav__link").forEach(function (a) {
+  document.querySelectorAll(".cw-site-header__nav-link, .cw-site-header__submenu-link, .cw-mobile-nav__link").forEach(function (a) {
     var href = (a.getAttribute("href") || "/").replace(/\/$/, "") || "/";
     if (href === path) a.classList.add("is-active");
+  });
+
+  document.querySelectorAll(".cw-site-header__nav-item.has-submenu").forEach(function (item) {
+    var link = item.querySelector(":scope > a[aria-haspopup='true']");
+    if (!link) return;
+
+    function setExpanded(open) {
+      link.setAttribute("aria-expanded", open ? "true" : "false");
+    }
+
+    item.addEventListener("mouseenter", function () {
+      setExpanded(true);
+    });
+    item.addEventListener("mouseleave", function () {
+      setExpanded(false);
+    });
+    item.addEventListener("focusin", function () {
+      setExpanded(true);
+    });
+    item.addEventListener("focusout", function () {
+      window.setTimeout(function () {
+        if (!item.contains(document.activeElement)) setExpanded(false);
+      }, 0);
+    });
   });
 
   var menuBtn = document.getElementById("cw-site-header-menu");

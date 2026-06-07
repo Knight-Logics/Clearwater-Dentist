@@ -10,14 +10,21 @@ rebuild/public/
 !rebuild/public/css/cw-header.css
 !rebuild/public/css/typography-fx.css
 !rebuild/public/css/cw-fullbleed-overrides.css
+!rebuild/public/css/cw-footer-seo.css
+!rebuild/public/css/cw-before-after.css
+!rebuild/public/css/cw-page-hero-gallery.css
+!rebuild/public/css/meet-the-doctor-upgrades.css
 !rebuild/public/css/header-bar.css
 !rebuild/public/js/knight-upgrades.js
 !rebuild/public/js/fusco-reviews.js
 !rebuild/public/js/homepage-upgrades.js
 !rebuild/public/js/cw-header.js
+!rebuild/public/js/cw-before-after.js
+!rebuild/public/js/meet-the-doctor-upgrades.js
 
 # Deploy staging output
 rebuild/pages-deploy/
+rebuild/screenshots/
 
 # OS / editor
 .DS_Store

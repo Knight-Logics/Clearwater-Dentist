@@ -125,7 +125,7 @@
 }
 
 @supports ((-webkit-background-clip: text) or (background-clip: text)) {
-  .clearwater-replica h1.cw-glimmer-title:not(.cw-hero-unified__title):not(.cw-hero-welcome) {
+  .clearwater-replica h1.cw-glimmer-title:not(.cw-hero-unified__title):not(.cw-hero-welcome):not(.cw-meet-doctor-hero__title) {
     background-image: linear-gradient(
       112deg,
       #0f3f55 0%,
